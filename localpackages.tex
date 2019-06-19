@@ -6,7 +6,7 @@
 \usepackage{listings}
 \lstset{basicstyle=\ttfamily,tabsize=2,breaklines=true}
 
-\usepackage{colortbl}
+\usepackage{colortbl,pifont}
 \usepackage{multicol}
 
 %% to add additional information to the right of examples, uncomment the following line
@@ -16,6 +16,16 @@
 \usepackage{./langsci/styles/langsci-basic}
 \usepackage{./langsci/styles/langsci-optional}
 \usepackage{./langsci/styles/langsci-lgr}
-\usepackage{pgfplots,pgfplotstable}
+\makeatletter
+\let\pgfmathModX=\pgfmathMod@
+\usepackage{pgfplots,pgfplotstable}%
+\let\pgfmathMod@=\pgfmathModX
+\makeatother
+\usepgfplotslibrary{colorbrewer,groupplots}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={.},detect-weight=true, detect-family=true, detect-all, input-symbols={\%}, free-standing-units, input-open-uncertainty= , input-close-uncertainty= ,table-align-text-pre=false,uncertainty-separator={\,},group-digits=false,detect-inline-weight=math}
+\DeclareSIUnit[number-unit-product={}]{\percent}{\%}
+\makeatletter \def\new@fontshape{} \makeatother
+\robustify\bfseries % For detect weight to work
 \usepackage{hhline} %to be removed later
 \usepackage{langsci-gb4e}
