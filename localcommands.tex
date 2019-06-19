@@ -16,3 +16,26 @@
 \newcommand{\langscidata}[1]{\pgfplotstableread{#1}\mydata;}
 
 \newcommand{\etriple}[3]{\textbf{#1} (\textit{#2}; #3)\\}
+
+\pgfplotsset{
+    easterdaystacked/.style={
+        ybar stacked,
+        ylabel={\%},
+        xtick=data,
+        axis lines*=left,
+        ymin=0,
+        scaled y ticks=false,
+        colormap/Greys-5,
+        cycle list={{Greys-E},{Greys-G},{Greys-K}},
+        ticklabel style={font=\footnotesize},
+        legend style={font=\footnotesize,anchor=north},
+        legend pos=outer north east,
+        legend cell align=left,
+        legend columns=1,
+        reverse stacked plots,
+        width=.6\textwidth,
+        height=5cm,
+        enlarge x limits={0.2},
+        bar width=1cm,
+        }
+}

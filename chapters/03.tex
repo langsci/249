@@ -238,13 +238,57 @@ Additionally, more detailed information on syllable patterns, restrictions on cl
 
   The distribution of maximal onset and coda patterns in the sample, by number of consonants, can be found in Figures \ref{fig:3.1}--\ref{fig:3.2}.
 
-\begin{figure}  
-\caption{\label{fig:3.1} Maximal onset sizes in sample.}
+\begin{figure} 
+\begin{tikzpicture}
+            \begin{axis}[
+                    ybar,
+                    ylabel={\textit{N} languages},
+                    xlabel={\textit{N} consonants in maximal onset},
+                    xtick=data,
+                    axis lines*=left,
+                    ymin=0,
+                    scaled y ticks=false,
+                    legend pos=north west,
+                    ticklabel style={font=\footnotesize\scshape},
+                    width=\textwidth,
+                    height=5cm,
+                    enlarge x limits={0.1},
+                    nodes near coords,
+                    nodes near coords style={text=black,font=\footnotesize},
+                    ]
+                \addplot+[
+                     fill=black,draw=none
+                    ] coordinates {(0,0) (1,52) (2,22) (3,15) (4,8) (5,1) (6,0) (7,1) (8,1)};
+\end{axis}
+\end{tikzpicture}
+\caption{\label{fig:3.1}Maximal onset sizes in sample.}
 \end{figure}
 
 
 \begin{figure}
-\caption{\label{fig:3.2} Maximal coda sizes in sample.}
+\begin{tikzpicture}
+            \begin{axis}[
+                    ybar,
+                    ylabel={\textit{N} languages},
+                    xlabel={\textit{N} consonants in maximal coda},
+                    xtick=data,
+                    axis lines*=left,
+                    ymin=0,
+                    scaled y ticks=false,
+                    legend pos=north west,
+                    ticklabel style={font=\footnotesize\scshape},
+                    width=\textwidth,
+                    height=5cm,
+                    enlarge x limits={0.1},
+                    nodes near coords,
+                    nodes near coords style={text=black,font=\footnotesize},
+                    ]
+                \addplot+[
+                     fill=black,draw=none
+                    ] coordinates {(0,24) (1,39) (2,17) (3,11) (4,5) (5,3) (6,1)};
+\end{axis}
+\end{tikzpicture}
+\caption{\label{fig:3.2}Maximal coda sizes in sample.}
 \end{figure}
 
   The data presented in Figures \ref{fig:3.1} and \ref{fig:3.2} are for onset and coda patterns determined through the procedure described in \sectref{sec:3.2.1}. They do not include the largest word-marginal patterns which occur in languages with syllabic obstruents. There are four languages in the sample which are reported to have syllabic obstruents resulting in Highly Complex patterns at word margins.\footnote{{Additionally, Tohono O’odham has syllabic obstruents, but only in independent grammatical particles consisting of a single consonant (determiners and conjunctives). These are not reported to be phonologically bound to adjacent words. Therefore I do not include Tohono O’odham in \tabref{tab:3.1}.}} These patterns are presented in \tabref{tab:3.1}, along with the reported maximal onset and coda patterns in the languages.
@@ -545,12 +589,44 @@ stomach-\textsc{sg}\\
 
   
 \begin{figure}
-\caption{\label{fig:3.3} Morphological constituency patterns in maximal onset types in data. For each maximal onset type, figure shows proportion of languages exhibiting the given morphological patterns for that type.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig33.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdaystacked,
+                                xticklabels={CC,CCC,CCCC,{CCCCC or more}},
+                        ]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+[
+                    /pgf/number format/read comma as period, fill
+                    ] table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:3.3}Morphological constituency patterns in maximal onset types in data. For each maximal onset type, figure shows proportion of languages exhibiting the given morphological patterns for that type.}
 \end{figure}
 
 
 \begin{figure}
-\caption{\label{fig:3.4} Morphological constituency patterns in maximal coda types in data. For each maximal coda type, figure shows proportion of languages exhibiting the given morphological patterns for that type.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig34.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdaystacked,
+                                xticklabels={CC,CCC,CCCC,{CCCCC or more}},
+                        ]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+[
+                    /pgf/number format/read comma as period, fill
+                    ] table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:3.4}Morphological constituency patterns in maximal coda types in data. For each maximal coda type, figure shows proportion of languages exhibiting the given morphological patterns for that type.}
 \end{figure}
 
   For both maximal onset and maximal coda patterns in the data, the proportion of languages having these clusters solely in morphologically complex contexts increases with cluster size. However, morphologically complex patterns also occur alongside morpheme-internal patterns in the maximal margins for a number of languages (the “Both patterns” trend in Figures \ref{fig:3.3} and \ref{fig:3.4}). When this trend is additionally considered, we find that maximal coda cluster types are generally more likely than maximal onset types to exhibit morphologically complex patterns. We also find that all maximal cluster types of five consonants or larger are found only in morphologically complex contexts.
@@ -577,12 +653,44 @@ stomach-\textsc{sg}\\
   The analyses presented in Figures \ref{fig:3.3}--\ref{fig:3.4} test Greenberg’s specific predictions regarding cluster size. However, the hypothesis in (\ref{ex:3.4}a)\todo{??} is formulated with respect to syllable structure complexity, which is a slightly different question, though we expect to find a similar pattern due to how the categories are defined. In Figures \ref{fig:3.5}--\ref{fig:3.6} I present the morphological constituency patterns observed by syllable structure complexity category. Note that these figures only include the languages from each category which have complex onsets or complex codas, respectively.
 
 
-\begin{figure}  
-\caption{\label{fig:3.5} Morphological constituency patterns in maximal complex onsets, by syllable structure complexity category. For each category, the figure shows the proportion of languages exhibiting the given morphological patterns in its complex onsets.}
+\begin{figure}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig35.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdaystacked,
+                                xticklabels={{Moderately Complex}, Complex, {Highly Complex}},
+                        ]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+[
+                    /pgf/number format/read comma as period, fill
+                    ] table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:3.5}Morphological constituency patterns in maximal complex onsets, by syllable structure complexity category. For each category, the figure shows the proportion of languages exhibiting the given morphological patterns in its complex onsets.}
 \end{figure}
 
 
 \begin{figure}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig36.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdaystacked,
+                                xticklabels={Complex, {Highly Complex}},
+                        ]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+[
+                    /pgf/number format/read comma as period, fill
+                    ] table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
 \caption{\label{fig:3.6} Morphological constituency patterns in maximal complex codas, by syllable structure complexity category. For each category, the figure shows the proportion of languages exhibiting the given morphological patterns in its complex onsets. Note that the one language with complex codas from the Moderately Complex category — Eastern Khanty — is not included in the figure. Its very marginal complex codas are always morphologically complex.}
 \end{figure}
 
