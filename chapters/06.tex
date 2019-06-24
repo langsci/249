@@ -269,7 +269,23 @@ In word-final position following a consonant, high vowels /i u/ and mid back vow
 
   
 \begin{figure}
-\caption{\label{fig:6.1} Percentage of languages in each syllable structure complexity group with given number of distinct vowel reduction processes.}
+\caption{\label{fig:6.1}Percentage of languages in each syllable structure complexity group with given number of distinct vowel reduction processes.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig61.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdaystacked,
+                                xticklabels={Simple,{Moderately Complex},Complex,{Highly Complex}},
+                        ]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+[
+                    /pgf/number format/read comma as period, fill
+                    ] table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
 \end{figure}
 
   As syllable structure complexity increases, so does the likelihood that a language has more than one vowel reduction process operating synchronically. In fact, languages at the far end of the syllable structure complexity scale, those in the Highly Complex category, are much more likely to have two or more vowel reduction processes (18 languages) than to have one or none (seven languages). Statistical tests show there is a significant positive correlation between the number of distinct vowel reduction processes reported per language and syllable structure complexity, measured both categorically (\textit{r}(100) = .251, \textit{p} = .01) and as a sum of maximal syllable margin sizes (\textit{r}(100) = .283, \textit{p} = .004)

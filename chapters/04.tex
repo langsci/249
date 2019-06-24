@@ -340,6 +340,22 @@ Vowel length & Simple & Moderately Complex & Complex & Highly Complex\\
 
 \begin{figure}
 \caption{\label{fig:4.2} Proportion of languages in each syllable structure complexity category which have contrastive vowel length for some or all vowel qualities (VQs).}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig42.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdaystacked,cycle list={{Greys-F},{Greys-K}},
+                                xticklabels={Simple,{Moderately Complex},Complex,{Highly Complex}},
+                        ]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+[
+                    /pgf/number format/read comma as period, fill
+                    ] table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
 \end{figure}
 
   In all categories, languages with vowel length contrasts are generally more likely to have these contrasts for all rather than just some vowel qualities. However, there is an interesting result with respect to vowel length contrasts in the Simple syllable structure category. Although languages with Simple syllable structure are overall less likely to have vowel length contrasts, if they do have a contrast they are also most likely to have this contrast for all vowel qualities. In fact, this pattern is without exception in the language sample.
@@ -854,6 +870,22 @@ velarization\\
 
 \begin{figure}
 \caption{\label{fig:4.10} Number of place distinctions made in region of hard palate in languages with different syllable structure complexity. Place distinctions considered here are \textit{palato-alveolar}, \textit{palatal}, \textit{palatalized alveolar and/or velar}, and \textit{alveolo-palatal}. For each category of syllable structure complexity, I show the percentage of languages having one, two, three, or none of these places represented in their consonant inventories.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig410.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdaystacked,
+                                xticklabels={Simple,{Moderately Complex},Complex,{Highly Complex}},
+                        ]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+[
+                    /pgf/number format/read comma as period, fill
+                    ] table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
 \end{figure}
 
   In all categories, most languages have at least one place articulation in the region of the hard palate. Crucially, the patterns in \figref{fig:4.10} show that the percentage of languages having one or more articulations in the region of the hard palate increases steadily with syllable structure complexity. That is, the trend favoring purported ‘palatal’ articulations in languages with simpler syllable structure does not cancel out the trend favoring purported ‘palato-alveolar’ articulations in languages with more complex syllable structure.
@@ -862,6 +894,22 @@ velarization\\
 
 \begin{figure}
 \caption{\label{fig:4.11} Number of place distinctions made in post-velar region in languages with different syllable structure complexity. Place distinctions considered here are \textit{uvular}, \textit{labialized uvular}, \textit{pharyngeal, pharyngealization}, and \textit{glottal}. For each category of syllable structure complexity, I show the percentage of languages having 1, 2, ${\geq}$3, or none of these places represented in their consonant inventories.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig411.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdaystacked,
+                                xticklabels={Simple,{Moderately Complex},Complex,{Highly Complex}},
+                        ]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+[
+                    /pgf/number format/read comma as period, fill
+                    ] table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
 \end{figure}
 
   In all categories of syllable structure complexity, roughly similar proportions of languages have at least one post-velar place of articulation, usually glottal. However, in the Complex and Highly Complex categories, one-fifth and one-half of languages, respectively, have consonants at more than one place in the post-velar region. In fact, in the Highly Complex category, some languages have consonant systems which make use of four post-velar places (Kabardian, Nuu-chah-nulth, and Thompson), and one language (Tashlhiyt) has consonants at all five post-velar places. Below I show the consonant phoneme inventory of Nuu-chah-nulth, which has consonants at \textit{uvular}, \textit{labialized uvular}, \textit{pharyngeal}, and \textit{glottal} places of articulation \REF{ex:4.33}.
@@ -967,6 +1015,22 @@ The trend with affricates, though not linear, is
   Flap and tap articulations differ from trill articulations in important ways. Flaps and taps are produced with a single rapid movement of the active articulator, usually the tongue tip, making brief contact with the passive articulator, usually the alveolar ridge. Trills in the coronal region often have the same configuration of articulators, but the movement of the active articulator is a vibration driven by aerodynamic currents rather than muscular movements (\citealt{LadefogedMaddieson1996}: 217-32). However, taps and flaps can vary allophonically with trills in some languages. We must allow for the possibility that the trend noted above reflects an analytical preference, in languages with simpler syllable structure, by which the flap/tap articulation is considered primary in such cases of allophonic variation. \figref{fig:4.17} shows how flap/tap and coronal trill articulations are distributed among languages with different syllable structure complexity. Even in the most liberal interpretation of the analytical preference scenario, the pattern with trill articulations does not clearly neutralize the pattern of flap/tap articulations.
 
 \begin{figure}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig417.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdaystacked,
+                                xticklabels={Simple,{Moderately Complex},Complex,{Highly Complex}},
+                        ]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+[
+                    /pgf/number format/read comma as period, fill
+                    ] table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
 \caption{\label{fig:4.17} Distribution of languages with flap/tap and trill articulations, by syllable structure complexity.}
 \end{figure}
 

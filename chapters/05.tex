@@ -538,7 +538,23 @@ The coding for each language in the sample can be found in Appendix B.
   The patterns classified as ‘Variable or other’ in \tabref{tab:5.4} are those whose stress placement is determined by phonological factors other than location with respect to the word edge or weight, or whose stress patterns may vary widely according to speaker or situational context, like the examples in \REF{ex:5.11} and \REF{ex:5.14} in \sectref{sec:5.2.1}. Excluding these languages, I plot the patterns of the remaining 72 languages in \figref{fig:5.1}. This figure shows the percentage of languages in each category of syllable structure complexity having the given stress placement pattern.
 
 \begin{figure}
-\caption{\label{fig:5.1} Percentage of languages exhibiting each of the given stress placement patterns, by syllable structure complexity.}
+\caption{\label{fig:5.1}Percentage of languages exhibiting each of the given stress placement patterns, by syllable structure complexity.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig51.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdaystacked,reverse stacked plots=false,
+                                xticklabels={Simple,{Moderately Complex},Complex,{Highly Complex}},
+                        ]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+[
+                    /pgf/number format/read comma as period, fill
+                    ] table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
 \end{figure}
 
   Recall that the three categories for stress placement employed here can be used as measures for the predictability of stress placement, with fixed systems being most predictable and morphologically or lexically conditioned systems being least predictable. Interpreting the patterns in \figref{fig:5.1}, we find that the percentage of languages with the least predictable — that is, morphologically or lexically conditioned — stress placement mildly increases from the Moderately Complex to the Highly Complex category. However, the linear trend is again broken by the pattern in the Simple category, which shows a pattern virtually identical to that of the Highly Complex category. Thus, while the hypothesis in \REF{ex:5.4} is perhaps weakly supported within the set of languages with non-Simple syllable structure, we do not find general support for the hypothesis.
@@ -571,6 +587,22 @@ The coding for each language in the sample can be found in Appendix B.
 
 \begin{figure}
 \caption{\label{fig:5.2} Percentage of languages with word stress in each category of syllable structure complexity exhibiting stress-conditioned vowel reduction or consonant processes.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig52.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdaystacked,reverse stacked plots=false,
+                                xticklabels={Simple,{Moderately Complex},Complex,{Highly Complex}},
+                        ]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+[
+                    /pgf/number format/read comma as period, fill
+                    ] table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
 \end{figure}
 
   The patterns in \figref{fig:5.2} indicate that, as syllable structure complexity increases, languages are more likely to have phonetic vowel reduction processes as an effect of word stress. In particular, this pattern shows that languages with Simple syllable structure are much less likely than languages from the other three categories to have unstressed vowel reduction. When the pattern in the Simple category is cross-tabulated against those for the other three categories combined, the result is statistically significant: χ\textsuperscript{2}(1, \textit{N} = 79) = 5.298, \textit{p} = 0.02. By comparison, the trend in processes affecting consonants in unstressed syllables shows an erratic, but overall decreasing trend with respect to syllable structure complexity. Processes affecting consonants in stressed syllables are generally rare in the sample and show a level trend. 
