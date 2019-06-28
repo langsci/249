@@ -37,5 +37,21 @@
         height=5cm,
         enlarge x limits={0.2},
         bar width=1cm,
-        }
+        },
+    easterdayline/.style={
+        sharp plot,
+        ylabel={\%},
+        xtick=data,
+        axis lines*=left,
+        ymin=0,
+        ymax=100,
+        color=black,
+        cycle list name=mark list,
+        legend style={font=\footnotesize,anchor=north},
+        legend pos=outer north east,
+        legend cell align=left,
+        legend columns=1,
+        width=.6\textwidth,
+        height=5cm,
+    }
 }
