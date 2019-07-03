@@ -276,8 +276,44 @@ This is presented as evidence that the high front element in these structures be
   The distribution of vowel quality inventory sizes in the languages of the sample can be found in \figref{fig:4.1}.
 
 
-\begin{figure}  
-\caption{\label{fig:4.1} Languages of sample distributed according to the number of distinctive vowel qualities in their phoneme inventories.}
+\begin{figure}
+\begin{tikzpicture}
+            \begin{axis}[
+                    ybar,
+                    ylabel={\textit{N} languages},
+                    xlabel={\textit{N} distinctive vowel qualities},
+                    xtick=data,
+                    axis lines*=left,
+                    ymin=0,
+                    scaled y ticks=false,
+                    legend pos=north west,
+                    ticklabel style={font=\footnotesize\scshape},
+                    width=\textwidth,
+                    height=5cm,
+                    enlarge x limits={0.1},
+                    nodes near coords,
+                    nodes near coords style={text=black,font=\footnotesize},
+                    ]
+                \addplot+[
+                     fill=black,draw=none
+                    ] table {
+                    x   y
+                    2	1
+3	9
+4	7
+5	34
+6	22
+7	9
+8	8
+9	5
+10	3
+11	0
+12	1
+13	1                  
+};
+\end{axis}
+\end{tikzpicture}
+\caption{\label{fig:4.1}Languages of sample distributed according to the number of distinctive vowel qualities in their phoneme inventories.}
 \end{figure}
 
   The average number of distinctive vowel qualities for languages in the sample is 5.9. The range is 2-13, with the extremes being Kabardian (two vowel qualities) and Eastern Khanty (13 vowel qualities). Over one-third (34) of the languages have systems with five contrastive vowel qualities. The next most common pattern is for languages to have six contrastive vowel qualities. These proportions are nearly identical to those reported for the 564-language sample in \citet{Maddieson2013c}.
@@ -345,7 +381,7 @@ Vowel length & S & MC & C & HC\\
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
             \begin{axis}[easterdaystacked,cycle list={{Greys-F},{Greys-K}},
-                                xticklabels={Simple,{Moderately Complex},Complex,{Highly Complex}},
+                                xticklabels={S,MC,C,HC},
                         ]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+[
@@ -757,7 +793,30 @@ post-aspiration\\
   In \figref{fig:4.4} I show the number of languages in the sample which have the given phonation feature in their consonant inventories.
 
 
-\begin{figure}  
+\begin{figure} 
+\begin{tikzpicture}
+            \begin{axis}[
+                    ybar,
+                    ylabel={\textit{N} languages},
+                    xtick=data,
+                    axis lines*=left,
+                    ymin=0,
+                    scaled y ticks=false,
+                    xticklabel style={font=\footnotesize,rotate=66, anchor=east, align=right,text width=3.5cm},
+                    xticklabels = {{Voicing contrast in obstruents},{Voicing contrast in sonorants},{Breathy voice},{Creaky voice},{Voiced fricatives/affricates},{Voiceless sonorants},{Pre-aspiration},{Post-aspiration}},
+                    ticklabel style={font=\footnotesize},
+                    width=\textwidth,
+                    height=5cm,
+                    enlarge x limits={0.15},
+                    nodes near coords,
+                    nodes near coords style={text=black,font=\footnotesize},
+                    ]
+                \addplot+[
+                     fill=black,draw=none
+                    ] coordinates {(0,73) (1,5) (2,4) (3,4) (4,51) (5,6) (6,0) (7,23)};
+%                   
+\end{axis}
+\end{tikzpicture}
 \caption{\label{fig:4.4} Phonation features in consonant inventories, by number of languages in which they are present.}
 \end{figure}
 
@@ -774,6 +833,29 @@ post-aspiration\\
   
 \begin{figure}
 \includegraphics[width=\textwidth]{figures/fig46.png}
+\begin{tikzpicture}
+            \begin{axis}[
+                    ybar,
+                    ylabel={\textit{N} languages},
+                    xtick=data,
+                    axis lines*=left,
+                    ymin=0,
+                    scaled y ticks=false,
+                    xticklabel style={font=\footnotesize,rotate=66, anchor=east, align=right,text width=3.5cm},
+                    xticklabels = {{Labial-velar},{Bilabial},{Dental/alveolar},{Dental and alveolar},{Alveolo-palatal},{Palatal},{Velar},{Glottal},{Labiodental},{Palato-alveolar},{Retroflex},{Uvular},{Pharyngeal},{Palatalization},{Labialization},{Pharyngealization},{Velarization}},
+                    ticklabel style={font=\footnotesize},
+                    width=\textwidth,
+                    height=5cm,
+                    enlarge x limits={0.05},
+                    nodes near coords,
+                    nodes near coords style={text=black,font=\footnotesize},
+                    ]
+                \addplot+[
+                     fill=black,draw=none
+                    ] coordinates {(0,7) (1,99) (2,73) (3,27) (4,11) (5,32) (6,99) (7,76) (8,43) (9,52) (10,20) (11,22) (12,4) (13,6) (14,22) (15,1) (16,1) };
+%                   
+\end{axis}
+\end{tikzpicture}
 \caption{\label{fig:4.6}Areal distribution of languages in sample with no voicing contrast in obstruents.}
 \end{figure}
 
@@ -872,7 +954,7 @@ velarization\\
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
             \begin{axis}[easterdaystacked,
-                                xticklabels={Simple,{Moderately Complex},Complex,{Highly Complex}},
+                                xticklabels={S,MC,C,HC},
                         ]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+[
@@ -896,7 +978,7 @@ velarization\\
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
             \begin{axis}[easterdaystacked,
-                                xticklabels={Simple,{Moderately Complex},Complex,{Highly Complex}},
+                                xticklabels={S,MC,C,HC},
                         ]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+[
@@ -967,6 +1049,30 @@ click\\
 
   
 \begin{figure}
+
+\begin{tikzpicture}
+            \begin{axis}[
+                    ybar,
+                    ylabel={\textit{N} languages},
+                    xtick=data,
+                    axis lines*=left,
+                    ymin=0,
+                    scaled y ticks=false,
+                    xticklabel style={font=\footnotesize,rotate=66, anchor=east, align=right,text width=3.5cm},
+                    xticklabels = {{Stop},{Affricate},{Fricative},{Nasal},{Flap/tap},{Trill},{Central approximant},{Lateral fricative},{Lateral approximant},{Prenasalization},{Nasal release},{Lateral release},{Ejective},{Implosive},{Click}},
+                    ticklabel style={font=\footnotesize},
+                    width=\textwidth,
+                    height=5cm,
+                    enlarge x limits={0.05},
+                    nodes near coords,
+                    nodes near coords style={text=black,font=\footnotesize},
+                    ]
+                \addplot+[
+                     fill=black,draw=none
+                    ] coordinates {(0,100) (1,63) (2,96) (3,98) (4,49) (5,30) (6,91) (7,11) (8,78) (9,15) (10,1) (11,5) (12,19) (13,5) (14,1)};
+%                   
+\end{axis}
+\end{tikzpicture}
 \caption{\label{fig:4.12} Manner features in consonant inventories, by number of languages in which they are present.}
 \end{figure}
 
@@ -1014,7 +1120,7 @@ The trend with affricates, though not linear, is
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
             \begin{axis}[easterdaystacked,
-                                xticklabels={Simple,{Moderately Complex},Complex,{Highly Complex}},
+                                xticklabels={S,MC,C,HC},
                         ]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+[
@@ -1254,8 +1360,7 @@ Adjacent back vowels may also condition such processes, as in the Uyghur example
 
   Most of the processes described here for the development of uvulars would fall under the definition of assimilation. In gestural terms, the low and/or back tongue body configuration for the vowel articulation has the effect of pulling the consonant articulation away from the central part of the velum and towards the back velum or uvula. Unlike the case of the palato-alveolars, there does not seem to be a strong directional tendency for this assimilation; it occurs both preceding and following the conditioning vowels in the examples given above. In the case of the Western European uvular trill, at least some accounts propose a weakening of the apical gesture and strengthening of the domed tongue body gesture for the rhotic \citep{Schiller1999}, which could perhaps be analyzed as simultaneous processes of lenition and fortition.
 
-\subsubsection{\rmfamily\bfseries} 
-\subsubsection{{Ejectives} }\label{sec:4.5.2.3}
+\subsubsection{Ejectives}\label{sec:4.5.2.3}
 
   Ejectives are consonants which involve a simultaneous closure by the glottis and a constriction in the oral part of the vocal tract. During the consonant articulation, the closed glottis is raised, increasing the air pressure so that the release of the oral constriction is accompanied by a salient burst of air, though the specific phonetic properties of this articulation may vary widely crosslinguistically \citep{Lindau1984}. Ejectives are often analyzed as sequences of obstruents and glottal stops, especially in phonological analyses which seek to maximize the economy of phoneme inventories. For example, Zuni has phonetic ejective stops and affricates, which are analyzed by Newman to be phonemic sequences \REF{ex:4.42}.
 

@@ -701,6 +701,29 @@ stomach-\textsc{sg}\\
 
 
 \begin{figure}  
+\begin{tikzpicture}
+            \begin{axis}[
+                    ybar,
+                    ylabel={\%},
+                    xtick=data,
+                    axis lines*=left,
+                    ymin=0,
+                    ymax=100,
+                    legend pos=north west,
+                    ticklabel style={font=\footnotesize},
+                    width=.75\textwidth,
+                    enlarge x limits={.2},
+                    height=5cm,
+                    bar width=1cm,
+                    nodes near coords,
+                    nodes near coords style={text=black,font=\footnotesize},
+                    xticklabels={{Moderately Complex}, Complex, {Highly Complex}},
+                    ]
+                \addplot+[
+                     fill=black,draw=none
+                    ] coordinates {(0,22.2222222222222) (1,40) (2,75)};
+\end{axis}
+\end{tikzpicture}
 \caption{\label{fig:3.7} Percentage of languages in each category exhibiting morphologically complex patterns in either or both of its maximal syllable margins.}
 \end{figure}
 
@@ -843,7 +866,7 @@ k-t͡ʃaʔʃp-ʃ-k’n
 
   In order to provide a better picture of what specific syllable patterns occur in the languages of the Highly Complex portion of the sample, I list some representative structures in \tabref{tab:3.12}. The definition of Highly Complex syllable structure includes any onset or coda structure of three obstruents, or of four consonants or more in length. It also includes any word-marginal sequence containing syllabic obstruents such that a sequence of three or more obstruents occurs at a word margin. For each language I give a set of examples for each onset, coda, and/or word-marginal cluster that occurs at each of the following lengths: three consonants, four consonants, and five or more consonants. For Tashlhiyt, I have given some examples of vowelless words in the rightmost column, but have not assigned them to a word margin.
 
-\begin{table}
+\begin{table}\small
 \begin{tabular}{llll}
 \lsptoprule
  & \multicolumn{3}{c}{Highly Complex structures}\\\cmidrule(lr){2-4}
@@ -861,8 +884,8 @@ k-t͡ʃaʔʃp-ʃ-k’n
 {Wutung} & — & \textbf{Onset}: hmbl & —\\
 {Doyayo} & — & \textbf{Coda}: βlts, ɣldz, mnts & —\\
 {Kunjen} & — & \textbf{Coda:} lbmb, ɹdnd, jɡŋɡ & —\\
-{Passamaquoddy-Maliseet} & \textbf{Onset:} psk, ksp, pskʷ & — & —\\
-                        &  \textbf{Coda:} pskʷ, kskʷ  \\
+{Passamaquoddy-} & \textbf{Onset:} psk, ksp, pskʷ & — & —\\
+                        Maliseet &  \textbf{Coda:} pskʷ, kskʷ  \\
 {Qawasqar} & \textbf{Onset:} qsq, qst, qsk & \textbf{Onset:} qsqj & —\\
            & \textbf{Coda}: qsq  \\
 {Tehuelche} & \textbf{Word-initial:} kʃ.x, kʃ.ʔ  & \textbf{Word-final:} ʃp.ʃ.k’ & —\\
@@ -877,19 +900,6 @@ k-t͡ʃaʔʃp-ʃ-k’n
                 & & \textbf{Coda:} ʃt͡ʃkt͡ʃ, t͡ʃspk, ɡʂsp\\
 {Polish} & \textbf{Onset:} pʃt, xʃt, tkfʲ  & \textbf{Onset:} pstʃ, fksʃ, vzɡl  & \textbf{Onset:} spstr \\
             & \textbf{Coda:} psk, stf, ʃt͡ʃp & \textbf{Coda:} ɲstf, tstf, rstf, pstf & \textbf{Coda:} mpstf\\
-\lspbottomrule
-\end{tabular}
-\caption{\label{tab:3.12}Representative sample of Highly Complex patterns occurring in data. (—) indicates that there are no reported patterns of this kind in the given language.}The Yine patterns are in parentheses because they are representative triconsonantal clusters for the language but do not contain three obstruents (see discussion in \sectref{sec:3.2.3}).
-\end{table}
-
-
-
-
-\begin{table}
-\begin{tabular}{llll}
-\lsptoprule
- & \multicolumn{3}{c}{Highly Complex structures}\\\cmidrule(lr){2-4}
-{Language} & {3-obstruent} & {4-C} & {5-C and larger}\\\midrule
 {Thompson} & \textbf{Onset:} spt, st͡s’k  & \textbf{Coda:} t͡sxst͡s, jxst͡s, ɬkst & \textbf{Coda:} ɬqsxtxʷ\\
            & \textbf{Coda:} xʷkt, xʷst͡s, pst͡s\\
 {Itelmen} & \textbf{Onset:} kth kp'k' ɬqz  & \textbf{Onset:} ttxn, ksxw, ktxl  & \textbf{Onset:} kpɬkn, tksxqz, kstk’ɬkn \\
@@ -902,8 +912,28 @@ k-t͡ʃaʔʃp-ʃ-k’n
             & \textbf{Word-final:} kʷtt, ʃ.kd & \textbf{Word-final:} ststː \\
 \lspbottomrule
 \end{tabular}
-\caption{\label{tab:3.12cont}Representative sample of Highly Complex patterns occurring in data. (—) indicates that there are no reported patterns of this kind in the given language. The Yine patterns are in parentheses because they are representative triconsonantal clusters for the language but do not contain three obstruents (see discussion in \sectref{sec:3.2.3}).}
+\caption{\label{tab:3.12}Representative sample of Highly Complex patterns occurring in data. (—) indicates that there are no reported patterns of this kind in the given language. The Yine patterns are in parentheses because they are representative triconsonantal clusters for the language but do not contain three obstruents (see discussion in \sectref{sec:3.2.3}).}
 \end{table}
+
+% % % \begin{table} % Joined with the Table above (author's request)
+% % % \begin{tabular}{llll}
+% % % \lsptoprule
+% % %  & \multicolumn{3}{c}{Highly Complex structures}\\\cmidrule(lr){2-4}
+% % % {Language} & {3-obstruent} & {4-C} & {5-C and larger}\\\midrule
+% % % {Thompson} & \textbf{Onset:} spt, st͡s’k  & \textbf{Coda:} t͡sxst͡s, jxst͡s, ɬkst & \textbf{Coda:} ɬqsxtxʷ\\
+% % %            & \textbf{Coda:} xʷkt, xʷst͡s, pst͡s\\
+% % % {Itelmen} & \textbf{Onset:} kth kp'k' ɬqz  & \textbf{Onset:} ttxn, ksxw, ktxl  & \textbf{Onset:} kpɬkn, tksxqz, kstk’ɬkn \\
+% % %             & \textbf{Coda:} pɬh sht & \textbf{Coda:} nt͡ʃpx, mpɬx, ɬtxt͡ʃ & \textbf{Coda:} nxɬxt͡ʃ, mstxt͡ʃ\\
+% % % {Georgian} & \textbf{Onset:} t'k'b p't͡s'k' psk’ & \textbf{Onset:} txzβ ̞, t͡s’q’ɾt, brt͡s'q{}'  & \textbf{Onset:} p’ɾt͡s’k’β ̞, ɡβ ̞pɾt͡skβ ̞n \\
+% % %             & & \textbf{Coda:} ɾtxl, ɾt'q'l, nt͡ʃxl & \textbf{Coda:} nt͡ʃxls, ɾt͡s’q’β ̞s, ɾt'k'ls\\
+% % % {Cocopa} & \textbf{Onset:} sxʈ, pskʷ, xps  & \textbf{Onset:} ʂt͡ʃxʔ pʂt͡ʃʔ, p.t͡ʃx.m & \textbf{Word-initial:} pk.ʃkw\\
+% % %             & \textbf{Coda:} qsk, ʂsk, xsk \\
+% % % {Tashlhiyt} & \textbf{Word-initial:} ts.t  & \textbf{Word-initial:} ts:χs  & (\textbf{Words without vowels:)} tsːftχt, tftktstː, tsːkʃftstː\\
+% % %             & \textbf{Word-final:} kʷtt, ʃ.kd & \textbf{Word-final:} ststː \\
+% % % \lspbottomrule
+% % % \end{tabular}
+% % % \caption{\label{tab:3.12cont}Representative sample of Highly Complex patterns occurring in data. (—) indicates that there are no reported patterns of this kind in the given language. The Yine patterns are in parentheses because they are representative triconsonantal clusters for the language but do not contain three obstruents (see discussion in \sectref{sec:3.2.3}).}
+% % % \end{table}
 
   The languages in \tabref{tab:3.12} are organized so as to highlight several coherent patterns in the data. In the first set of languages (Alamblak, Bench, Menya, Kabardian, Lezgian, Yine, Camsá, Semai, and Nuu-chah-nulth), Highly Complex patterns are limited to one syllable or word margin, usually the onset/initial context. The Highly Complex patterns in these languages are typically limited to triconsonantal clusters, though four-consonant clusters occur in Camsá, Semai, and Nuu-chah-nulth. In the second group of languages (Wutung, Doyayo, and Kunjen), four-consonant clusters occur at one syllable margin, but triconsonantal patterns falling under the definition of Highly Complex (that is, sequences of three obstruents) do not occur. In this group, the CCCC clusters include at least one, but usually two, sonorants. Finally, in the remaining 13 languages, Highly Complex patterns occur in both margins and almost always include clusters of various sizes.
 
@@ -1068,18 +1098,6 @@ Language & Nature of\newline frequency data & Reported frequency of HC patterns\
 {Itelmen} & \textit{Impressionistic} & “The \textbf{\textit{frequent occurrence}} \textbf{\textit{of complex consonant clusters}} is one of the most notable traits of Itelmen phonology.” (\citealt{GeorgVolodin1999}: 38; translation TZ)\\
 {Lezgian} & \textit{Impressionistic} & “[w]ord-initial CC- and even \textbf{\textit{CCC- clusters are now common.}}” 
 \citep[46]{Haspelmath1993}\\
-\lspbottomrule
-\end{tabularx}
-\caption{\label{tab:3.14}Reported frequency of Highly Complex syllable patterns. Emphasis my own in all quotations.}
-\end{table}
-
-
-
-
-\begin{table}
-\begin{tabularx}{\textwidth}{lQQ}
-\lsptoprule
-Language & Nature of\newline frequency data & Reported frequency of HC patterns\\\midrule
 {Mohawk} & \textit{Type frequency\newline in syllable inventory} & \textbf{6/43 \textit{(14\%)}} of word-initial onsets and \textbf{3/25 \textit{(12\%)}} of word-final codas are HC (calculated from data provided in \citealt{Michelson1988}: 12-13).\\
 {Polish} & \textit{Type frequency\newline in syllable inventory} & \textbf{\textit{64/426 (15\%)}} of onset patterns occurring word-initially are HC,\textbf{ \textbf{18/141} \textit{(13\%)}} of coda patterns occurring word-finally are HC (calculated from data provided in \citealt{Bargiełowna1950}).\\
 {Tashlhiyt} & \textit{Type frequency\newline in text} & \textbf{\textit{451/5700 (7.9\%)}} of syntactic words in running text are composed of voiceless obstruents only (\citealt{Ridouane2008}: 328f).\\
@@ -1091,7 +1109,7 @@ Language & Nature of\newline frequency data & Reported frequency of HC patterns\
               & \textit{Impressionistic} &  “Words beginning with three consonants in sequence are \textbf{\textit{very common}}.” \citep[26]{Hanson2010}\\
 \lspbottomrule
 \end{tabularx}
-\caption{\label{tab:3.14cont}Reported frequency of Highly Complex syllable patterns. Emphasis my own in all quotations.}
+\caption{\label{tab:3.14}Reported frequency of Highly Complex syllable patterns. Emphasis my own in all quotations.}
 \end{table}
 
   Comparing the relative frequency patterns in \tabref{tab:3.14} to the combinatorial restriction patterns in \tabref{tab:3.13}, we find some correspondences between patterns which are not all that surprising. For example, it follows that Wutung, whose Highly Complex syllable patterns are restricted to a single four-consonant onset (\ref{ex:3.27}a), would also have a very low type frequency of this pattern in its syllable inventory. Similarly, it is expected that Georgian and Polish, both of which have larger clusters and fewer restrictions on consonant combinations, should have a higher type frequency of these patterns in their syllable inventories.\footnote{{Mohawk presents an unexpected pattern, in that its cluster patterns are relatively restricted but it has a type frequency of Highly Complex clusters which is on par with that of Georgian and Polish. This is due to the very small consonant phoneme inventory of the language (ten consonants), which limits the overall size of the syllable inventory.}} The other kinds of frequency data — type frequency in the lexicon and in running text — also show this correspondence, with higher frequencies typically corresponding to languages with freer consonant combinations in their Highly Complex patterns. It should also be noted that frequency patterns are reported for all but one language with relatively free consonant combinations (Nuu-chah-nulth). Though quantitative type frequency data isn’t given for Cocopa, Itelmen, or Thompson, the authors make a point of mentioning the high frequency and commonplace nature of Highly Complex structures in these languages. 
@@ -1154,18 +1172,6 @@ Yakima Sahaptin & \textit{Sahaptian} & \textsc{North America}\\
 {Menya} & “Non-homorganic consonants are phonetically separated by extremely short vocalic segments which are more and more not being written”; quality of short segments is conditioned by surrounding consonants and vowels (\citealt{Whitehead2004}: 9, 226).\\
 {Mohawk} & Stops are “strongly aspirated” before another (non-identical) consonant \citep[28]{Bonvillain1973}\\
 {Nuu-chah-nulth} & The first stop or affricate of a like sequence has “a release typical for such consonants” \citep[163--4]{Kim2003}. Epenthetic [ɪ] occurs between a nasal and back stop or affricate \citep[26-7]{Rose1981}. Voiceless plain stops are aspirated when they appear in syllable coda clusters \citep[12]{Davidson2002}.\\
-\lspbottomrule
-\end{tabularx}
-\caption{\label{tab:3.17}Descriptions of acoustic and perceptual characteristics of clusters in languages with Highly Complex syllable structure. Languages omitted due to lack of description are Bench, Doyayo, Kabardian, Passamaquoddy-Maliseet, Polish, Qawasqar, and Wutung.}* indicates that reported pattern is for syllables with obstruent nuclei.
-\end{table}
-
-
-
-
-\begin{table}
-\begin{tabularx}{\textwidth}{lQ}
-\lsptoprule
-{Language} & {Description of phonetic realization of consonant clusters}\\\midrule
 {*Semai} & Minor syllables consisting of consonants are “clearly heard and perceived as distinct syllables.” \citep[321]{Sloan1988}. Vocalic element in consonantal minor syllable “usually a very short, non-phonemic, epenthetic [ə]”, but can vary in quality, and is “optional if the two consonants are easily pronounced without the epenthetic vowel.” \citep[2]{Philips2007}\\
 {*Tashlhiyt} & Short “voiced transitional vocoids” whose quality is predictable by surrounding vowels split consonant sequences when one is voiced (\citealt{DellElmedlaoui2002}: 16); \citet[16]{GordonNafi2012} report this for occasional sequences of voiceless consonants. \citet[210]{Ridouane2008} reports that “stop release is obligatory before another stop which is not homorganic with it” and \citet{GriceEtAl2015} find that the “vocoid” is not entirely predictable from the voicing properties of surrounding Cs and that its presence is partly conditioned by intonational prominence.\\
 {*Tehuelche} & The “accumulation of consonants is made possible by the development of […] \textit{supporting vowels.}” These have “a neutral vowel quality which play the role of lubricator and which corresponds to the neutralization of all other vowels,” and are transcribed as [ə] or [ʊ] depending upon consonantal environment (\citealt{FernándezGarayHernández2006}: 13;  \citealt{FernándezGaray1998}; translation RNS)\\
@@ -1175,7 +1181,7 @@ Yakima Sahaptin & \textit{Sahaptian} & \textsc{North America}\\
 {Yine} & “A very salient feature of Yine consonant clusters is the prevalence of an audible interval between the release of the first consonant (C\textsubscript{1}) and the closure of the second consonant (C\textsubscript{2}).” This “intra-cluster release” varies in duration, quality, and voicing, and is never obligatory \citep[28-9]{Hanson2010}. \citet{MattesonPike1958} describe the properties of these “non-phonemic transition vocoids” at length.\\
 \lspbottomrule
 \end{tabularx}
-\caption{\label{tab:3.17cont} Descriptions of acoustic and perceptual characteristics of clusters in languages with Highly Complex syllable structure. Languages omitted due to lack of description are Bench, Doyayo, Kabardian, Passamaquoddy-Maliseet, Polish, Qawasqar, and Wutung. * indicates that reported pattern is for syllables with obstruent nuclei.}
+\caption{\label{tab:3.17}Descriptions of acoustic and perceptual characteristics of clusters in languages with Highly Complex syllable structure. Languages omitted due to lack of description are Bench, Doyayo, Kabardian, Passamaquoddy-Maliseet, Polish, Qawasqar, and Wutung.}* indicates that reported pattern is for syllables with obstruent nuclei.
 \end{table}
 
   Even though many of the descriptions make mention of ‘epenthetic’ vowels, the patterns described above are consistent with those features listed by \citet{Hall2006} as being associated with intrusive vowels. The transitional elements in these clusters are characterized by neutral vowel qualities that may be heavily influenced by surrounding consonants, and may vary in their duration and voicing. In some cases the transitions are described as occurring between specific combinations of consonants with different places of articulation.

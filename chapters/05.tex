@@ -544,7 +544,7 @@ The coding for each language in the sample can be found in Appendix B.
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
             \begin{axis}[easterdaystacked,reverse stacked plots=false,
-                                xticklabels={Simple,{Moderately Complex},Complex,{Highly Complex}},
+                                xticklabels={S,MC,C,HC},
                         ]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+[
@@ -592,7 +592,7 @@ The coding for each language in the sample can be found in Appendix B.
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
             \begin{axis}[easterdaystacked,reverse stacked plots=false,
-                                xticklabels={Simple,{Moderately Complex},Complex,{Highly Complex}},
+                                xticklabels={S,MC,C,HC},
                         ]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+[
@@ -627,7 +627,7 @@ The coding for each language in the sample can be found in Appendix B.
 \begin{tabularx}{\textwidth}{Qccccr}
 \lsptoprule
 & \multicolumn{4}{c}{Syllable structure complexity}\\\cmidrule(lr){2-5}
-& Simple & Moderately Complex & Complex & Highly Complex & Total\\
+& S & MC & C & HC & Total\\
    Processes affecting consonants in unstressed syllables & \textit{N} = 7 & \textit{N} = 4 & \textit{N} = 8 & \textit{N} = 3\\\midrule
  Deletion & 1 & — & 3 & 1 & \textit{5}\\
  Voicing & 1 & 1 & 1 & 1 & \textit{4}\\
@@ -870,7 +870,7 @@ Intensity & *Pitch\\
 \begin{tabularx}{\textwidth}{lCCCCC}
 \lsptoprule
  & Word stress \textbf{present} & {Tone} \textbf{absent} & Stress-conditioned C allophony \textbf{absent} & Unstressed V reduction \textbf{present} & {V duration  as correlate of stress} \textbf{present}\\\midrule
-& \multicolumn{5}{c}{{Languages with prevalent Highly Complex patterns}}\\\midrule
+\multicolumn{6}{c}{{Languages with prevalent Highly Complex patterns}}\\\midrule
  Cocopa & \ding{51} & \ding{51} & \cellcolor{lsLightGray} & \ding{51} & \ding{51}\\
  Georgian & \ding{51} & \ding{51} & { \ding{51}} & \cellcolor{lsLightGray} & \cellcolor{lsLightGray}  \textit{(nr)}\\
  Itelmen & \ding{51} & \ding{51} & { \ding{51}} & \cellcolor{lsLightGray} & \cellcolor{lsLightGray} \\
@@ -879,7 +879,7 @@ Intensity & *Pitch\\
  Thompson & \ding{51} & \ding{51} & {} & \ding{51} & \ding{51}\\
  Tohono O’odham & \ding{51} & \ding{51} & {} & \ding{51} & \ding{51}\\
  Yakima Sahaptin & \ding{51} & \ding{51} & \ding{51} & \ding{51} & \cellcolor{lsLightGray} \\\midrule
-& \multicolumn{5}{c}{{Languages with intermediate Highly Complex patterns}}\\\midrule
+ \multicolumn{6}{c}{{Languages with intermediate Highly Complex patterns}}\\\midrule
  Albanian & \ding{51} & \ding{51} & \ding{51} & \ding{51} & \ding{51}\\
  Camsá & \ding{51} & \ding{51} & \ding{51} & \ding{51} & \ding{51}\\
  Kabardian & \ding{51} & \ding{51} & \ding{51} & \ding{51} & \ding{51}\\
@@ -891,7 +891,7 @@ Intensity & *Pitch\\
  Qawasqar & \cellcolor{lsLightGray}  (unclear) & \ding{51} & \cellcolor{lsLightGray} & \cellcolor{lsLightGray} & \cellcolor{lsLightGray} \\
  Semai & \ding{51} & \ding{51} & \ding{51} & \cellcolor{lsLightGray} & \cellcolor{lsLightGray} \textit{(nr)}\\
  Tehuelche & \ding{51} & \ding{51} & \ding{51} & \ding{51} & \cellcolor{lsLightGray} \textit{(nr)}\\\midrule
-& \multicolumn{5}{c}{{Languages with minor Highly Complex patterns}}\\\midrule
+\multicolumn{6}{c}{{Languages with minor Highly Complex patterns}}\\\midrule
  Alamblak & \ding{51} & \ding{51} & \ding{51} & \ding{51} & \textit{(nr)}\\
  Bench & \cellcolor{lsLightGray} & \cellcolor{lsLightGray} & \cellcolor{lsLightGray} & \cellcolor{lsLightGray} & \cellcolor{lsLightGray} \\
  Doyayo & \cellcolor{lsLightGray} & \cellcolor{lsLightGray} & \cellcolor{lsLightGray} & \cellcolor{lsLightGray} & \cellcolor{lsLightGray} \\

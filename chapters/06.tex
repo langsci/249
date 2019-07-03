@@ -275,7 +275,7 @@ In word-final position following a consonant, high vowels /i u/ and mid back vow
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
             \begin{axis}[easterdaystacked,
-                                xticklabels={Simple,{Moderately Complex},Complex,{Highly Complex}},
+                                xticklabels={S,MC,C,HC},
                         ]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+[
@@ -422,7 +422,7 @@ The categories of affected vowels listed in \tabref{tab:6.4} capture the cleares
 \begin{table}
 \begin{tabularx}{\textwidth}{Qccccr}
 \lsptoprule
- & \multicolumn{4}{c}{Syllable structure complexity} & \textit{Totals}\\
+ & \multicolumn{4}{c}{Syllable structure complexity} & \textit{Totals}\\\cmidrule(lr){2-5}
  Outcome of vowel reduction processes & S & MC & C & HC\\
  \textit{N} processes & 24  &  49  &  48  &  57  & \\\midrule
  \multicolumn{6}{c}{Single outcome from process}\\\midrule
