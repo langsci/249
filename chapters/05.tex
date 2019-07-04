@@ -591,13 +591,9 @@ The coding for each language in the sample can be found in Appendix B.
 \pgfplotstableread{data/fig52.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdaystacked,reverse stacked plots=false,
-                                xticklabels={S,MC,C,HC},
-                        ]
+            \begin{axis}[easterdayline]
             \foreach \i in {1,...,\numberofcols} {
-                \addplot+[
-                    /pgf/number format/read comma as period, fill
-                    ] table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
                 \addlegendentryexpanded{\colname}
             }
@@ -614,6 +610,18 @@ The coding for each language in the sample can be found in Appendix B.
   General vowel reduction patterns in the sample will be examined in greater detail in \chapref{sec:6}, so I present here just a brief analysis of unstressed vowel reduction in the 49 languages of the sample for which it is reported. Here only the outcomes of these processes are analyzed. Specifically, I consider outcomes involving reduction in vowel duration, reduction in vowel quality, vowel devoicing, and vowel deletion. A language may have several unstressed vowel reduction processes yielding different outcomes; each such process and outcome has been included in the analysis here. The results are shown in \figref{fig:5.3}. For each category of syllable structure complexity, the percentage of languages with unstressed vowel reduction resulting in the given outcome is shown.
 
 \begin{figure}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig53.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
 \caption{\label{fig:5.3} Percentage of languages with unstressed vowel reduction having the given outcome of vowel reduction in each category of syllable structure complexity.}
 \end{figure}
 
@@ -795,6 +803,18 @@ The coding for each language in the sample can be found in Appendix B.
   In order to better illustrate the trends in \tabref{tab:5.13}, in \figref{fig:5.4} I plot the percentage of languages in each syllable structure category reported to have each correlate of word stress.
 
 \begin{figure}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig54.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
 \caption{\label{fig:5.4} Percentage of languages which are reported to use given phonetic correlate of word stress, by syllable structure complexity.}
 \end{figure}
 
@@ -805,6 +825,22 @@ The coding for each language in the sample can be found in Appendix B.
   The distributions in \tabref{tab:5.13} and \figref{fig:5.4} show how each individual correlate of word stress patterns with respect to syllable structure complexity. We now turn to a test of the hypothesis in \REF{ex:5.7} which predicts that increasing syllable structure complexity will be accompanied by an increased number of phonetic correlates of word stress. In other words, we expect that the proportion of languages with two or three of the correlates examined here will increase across the four syllable structure complexity categories. The observed distribution can be found in \figref{fig:5.5}.
 
 \begin{figure}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig55.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdaystacked,reverse stacked plots=false,
+                                xticklabels={S,MC,C,HC},
+                        ]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+[
+                    /pgf/number format/read comma as period, fill
+                    ] table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
 \caption{\label{fig:5.5} Percentage of languages exhibiting given number of phonetic correlate of word stress in each syllable structure complexity category.}
 \end{figure}
 

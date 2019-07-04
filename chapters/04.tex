@@ -632,7 +632,19 @@ Range & 6--55 & 11--32 & 12--40 & 10--54\\
   Below, I examine whether the association between consonant inventory size and syllable structure complexity, with the added category of Highly Complex, can be found within geographical regions in the current sample. This analysis is necessarily impressionistic: because the already moderate sample size is split roughly evenly between six macro-areas, it is difficult to statistically test the patterns. In \figref{fig:4.3}, the median consonant inventory sizes are plotted against syllable structure complexity for the languages in each macro-area.
 
 
-\begin{figure}  
+\begin{figure}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig43.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline,ylabel={\textit{N} consonant phonemes}]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
 \caption{\label{fig:4.3} Median consonant phoneme inventory sizes by syllable structure complexity, for each macro-area represented in the sample.}
 \end{figure}
 
@@ -825,7 +837,19 @@ post-aspiration\\
   There are three other phonation features — \textit{voicing contrast in obstruents}, \textit{voiced fricatives/affricates}, and \textit{post-aspiration} — which occur in more than ten languages each. \figref{fig:4.5} attempts to capture any trends that exist with respect to the presence of these features and syllable structure complexity. The figure shows the percentage of languages in each category of syllable structure which have the given phonation feature in their consonant inventories.
 
 \begin{figure}
-\caption{\label{fig:4.5} Percentage of languages in each category of syllable structure complexity having the given phonation feature in their consonant inventories. For the calculation of the \textit{voiced fricatives/affricates} trend, four languages which have neither fricatives nor affricates have been excluded (see \sectref{sec:4.4.5})}.
+\begin{tikzpicture}
+\pgfplotstableread{data/fig45.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:4.5}Percentage of languages in each category of syllable structure complexity having the given phonation feature in their consonant inventories. For the calculation of the \textit{voiced fricatives/affricates} trend, four languages which have neither fricatives nor affricates have been excluded (see \sectref{sec:4.4.5})}.
 \end{figure}
 
   Only the \textit{voicing contrast in obstruents} feature has a near-monotonic, albeit weak, trend with respect to syllable structure complexity. While having a voicing contrast in obstruents is the norm for languages in all four categories of syllable structure, this feature is found with the highest frequency in languages from the Simple category and with lowest frequency in languages from the Highly Complex category. This trend is no doubt strongly influenced by the high representation of languages from the Americas in this category. See \figref{fig:4.6} for a map of the geographical distribution of the languages lacking a voicing contrast in obstruents, which are heavily concentrated in the Americas. Most (6/9) of the languages without this feature in the Highly Complex category are from this region.
@@ -921,6 +945,18 @@ velarization\\
   The remaining eight place features — \textit{labiodental}, \textit{alveolo-palatal, palato-alveolar}, \textit{retroflex}, \textit{palatal}, \textit{uvular}, \textit{glottal}, and secondary \textit{labialization} — are found in more than ten languages each. Of these, there are three features which show a (near-)monotonic increase or decrease in frequency with respect to syllable structure complexity. These are shown in \figref{fig:4.8}.
 
 \begin{figure}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig48.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
 \caption{\label{fig:4.8} Percentage of languages in each category of syllable structure complexity having the given place feature.}
 \end{figure}
 
@@ -1083,7 +1119,19 @@ click\\
   The remaining seven manner features considered here — \textit{affricate}, \textit{flap/tap}, \textit{trill}, \textit{lateral fricative}, \textit{lateral approximant}, \textit{ejective}, \textit{prenasalization} — occur in more than ten languages each. Three of these —  \textit{flap/tap}, \textit{prenasalization}, and \textit{ejective} — show a (near-)monotonic increase or decrease with respect to syllable structure complexity. While the feature \textit{affricate} does not show a linear trend, it does show a large overall increase in frequency between the Simple and Highly Complex categories. The patterning of these four features with respect to syllable structure complexity can be found in \figref{fig:4.13}.
 
 \begin{figure}
-\caption{\label{fig:4.13} Percentage of languages in each category of syllable structure complexity having the given manner feature.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig413.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline,ymax=100]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:4.13}Percentage of languages in each category of syllable structure complexity having the given manner feature.}
 \end{figure}
 
   There are two manner features whose frequency in inventories is associated with increasing syllable structure complexity. The trend in \textit{affricates}, though not linear, is nevertheless significant: χ\textsuperscript{2}(3, \textit{N} = 100) = 8.89, \textit{p} = .03. The \textit{ejectives} trend is statistically significant when the data from the Simple and Moderately Complex categories is combined and compared against that of the Complex and Highly Complex categories combined (\textit{p} =.006 in Fisher’s exact test). There is a heavy areal distribution of this feature: over half (10/19) of the languages with ejectives in the sample are found in the Americas. Outside the Americas, ejectives are also found to co-occur with Highly Complex syllable structure in the Caucasus region, Ethiopian Highlands, and Northeast Asia (see \figref{fig:4.14}).

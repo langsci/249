@@ -384,7 +384,19 @@ The categories of affected vowels listed in \tabref{tab:6.4} capture the cleares
 
   
 \begin{figure}
-\caption{\label{fig:6.2} Relative frequency of environments conditioning vowel reduction processes (expressed as percentage of total processes in each category of syllable structure} complexity).
+\begin{tikzpicture}
+\pgfplotstableread{data/fig62.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:6.2} Relative frequency of environments conditioning vowel reduction processes (expressed as percentage of total processes in each category of syllable structure complexity).}
 \end{figure}
 
   The trends in \figref{fig:6.2} show the \textit{stress} environment conditioning higher percentages of vowel reduction processes as syllable structure complexity increases. The \textit{word position} environment shows the opposite trend. The other two environments, \textit{consonantal} and \textit{phrase/utterance position}, have very subtle trends. Chi-square tests show that the \textit{stress} trend is significant (χ\textsuperscript{2}(3, \textit{N = 178}) = 8.721, \textit{p} = .03) and the \textit{word position} trend is highly significant (χ\textsuperscript{2}(3, \textit{N = 178}) = 15.986, \textit{p} = .001).
@@ -393,6 +405,19 @@ The categories of affected vowels listed in \tabref{tab:6.4} capture the cleares
 
   
 \begin{figure}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig63.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline,legend style={font=\footnotesize,anchor=north west,text width=3.75cm,minimum height=.9\baselineskip}]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \addlegendimage{empty legend}\addlegendentry{}
+            \end{axis}                                                                           
+\end{tikzpicture}
 \caption{\label{fig:6.3}Relative frequency of stress-conditioned vowel reduction processes, expressed as the percentage of all vowel reduction processes from languages which have stress in each category.}
 \end{figure}
 
@@ -446,6 +471,18 @@ The categories of affected vowels listed in \tabref{tab:6.4} capture the cleares
 
   
 \begin{figure}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig64.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
 \caption{\label{fig:6.4} Relative frequency of different outcomes of vowel reduction processes (expressed as percentage of total processes in each category of syllable structure complexity). Here outcomes are counted regardless of whether they occur alone or in combination with other outcomes.}
 \end{figure}
 

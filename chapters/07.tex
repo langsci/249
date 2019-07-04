@@ -9,7 +9,19 @@
 
   
 \begin{figure}
-\caption{\label{fig:7.1} Percentage of languages with word stress in each category of syllable structure complexity exhibiting stress-conditioned vowel reduction or consonant processes.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig71.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:7.1}Percentage of languages with word stress in each category of syllable structure complexity exhibiting stress-conditioned vowel reduction or consonant processes.}
 \end{figure}
 
 As discussed in \chapref{sec:5}, the findings with respect to stress-conditioned consonant processes were unexpected, in that it follows from the speech rhythm literature and related work (\citealt{BybeeEtAl1998,Schiering2007}) that segmental effects of stress in general will \textit{increase} with syllable structure complexity. While that was the case with unstressed vowel reduction (see also \sectref{sec:6.3.4}), it was not so for consonant allophony in stressed or unstressed syllables.
@@ -265,7 +277,19 @@ Most of the languages in the sample (86/100) had at least one of the process typ
   As a first test of these hypotheses, in \figref{fig:7.2} I show the percentage of languages in each category of syllable structure complexity which have allophonic processes resulting in (i) articulations associated with the Highly Complex category (palato-alveolar, uvular/back velar, ejective, affricate), (ii) other assimilation of consonants to vowels (palatalization/fronting, labialization, and velarization), and (iii) fortition (glide strengthening or increased constriction).
 
 \begin{figure}
-\caption{\label{fig:7.2} Percentage of languages in each category which have allophonic processes resulting in articulations associated with the Highly Complex category, fortition, or other assimilation of consonants to vowels.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig72.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:7.2}Percentage of languages in each category which have allophonic processes resulting in articulations associated with the Highly Complex category, fortition, or other assimilation of consonants to vowels.}
 \end{figure}
 
   The pattern in the figure shows support for the hypothesis in \REF{ex:7.1}: as syllable structure complexity increases, the percentage of languages with allophonic processes resulting in the articulations associated with Highly Complex syllable structure moderately decreases. There is only mixed support for the hypothesis in \REF{ex:7.2}. While the percentage of languages with allophonic fortition processes slightly decreases with increasing syllable structure complexity, the trend in assimilation processes is level.
@@ -273,14 +297,38 @@ Most of the languages in the sample (86/100) had at least one of the process typ
   As discussed above, additional support for the hypotheses may be found if allophonic processes resulting in articulations associated with the Simple category, and processes of lenition or sonorization more generally, exhibit a different pattern altogether with respect to syllable structure complexity. In \figref{fig:7.3}, I show the percentage of languages in each category of syllable structure complexity which have consonant allophony resulting in (i) articulations associated with the Simple category (prenasalization and flapping), and (ii) lenition or sonorization (obstruent voicing, spirantization, debuccalization, and consonants becoming glides or vowels).
 
 \begin{figure}
-\caption{\label{fig:7.3} Percentage of languages in each category which have allophonic processes resulting in articulations associated with the Simple category or lenition/sonorization.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig73.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:7.3}Percentage of languages in each category which have allophonic processes resulting in articulations associated with the Simple category or lenition/sonorization.}
 \end{figure}
   Although the lenition/sonorization pattern shows an overall increase, neither of the trends in \figref{fig:7.3} shows a linear trend with respect to syllable structure complexity. But since the patterns differ markedly from the trend for Highly Complex-associated articulations in \figref{fig:7.2}, they can be taken as lending some tentative support to the hypotheses.
 
   The analyses thus far have only considered the presence of processes within languages, and not the individual processes themselves. In the following figures, I show how the process types pattern in terms of the percentage of the total number of allophonic processes they represent in each syllable structure complexity category.
 
 \begin{figure}
-\caption{\label{fig:7.4} Percentage of processes in each category which result in articulations associated with the Highly Complex category, fortition, or other assimilation of consonants to vowels.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig74.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:7.4}Percentage of processes in each category which result in articulations associated with the Highly Complex category, fortition, or other assimilation of consonants to vowels.}
 \end{figure}
 
   The analysis in \figref{fig:7.4} shows that allophonic processes yielding articulations associated with Highly Complex syllable structure are more prevalent in languages with Simple syllable structure than the others. The trends with respect to fortition and assimilation, however, show little variation with respect to syllable structure complexity (note that the figure is scaled from 0-50\%).
@@ -288,7 +336,19 @@ Most of the languages in the sample (86/100) had at least one of the process typ
   Examining the processes resulting in articulations associated with the Simple category (\figref{fig:7.5}), we find that these are infrequent in all four syllable structure complexity categories. Processes of lenition or sonorization are more frequent in general, and also increase in frequency with syllable structure complexity.
 
 \begin{figure}
-\caption{\label{fig:7.5} Percentage of processes in each category which result in articulations associated with the Simple category or lenition/sonorization.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig75.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:7.5}Percentage of processes in each category which result in articulations associated with the Simple category or lenition/sonorization.}
 \end{figure}
 
   In sum, the analyses in this section show that allophonic processes producing articulations associated with the segmental inventories of languages with Highly Complex syllable structure are most frequent in languages from the Simple category. Fortition shows a similar but less robust pattern, particularly when the presence or absence of processes is considered. Processes of lenition or sonorization are most frequent in the Complex and Highly Complex categories. Finally, assimilation of consonants to vowels and processes producing articulations associated with the segmental inventories of languages in the Simple categories do not show robust trends with respect to syllable structure complexity.
@@ -302,7 +362,19 @@ Most of the languages in the sample (86/100) had at least one of the process typ
   In \figref{fig:7.6}, I plot the percentage of languages in each syllable structure complexity category which have processes resulting in palato-alveolar, uvular, or affricate articulations.
 
 \begin{figure}
-\caption{\label{fig:7.6} Percentage of languages in each syllable structure complexity category with allophonic processes resulting in articulations associated with the Highly Complex category.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig76.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:7.6}Percentage of languages in each syllable structure complexity category with allophonic processes resulting in articulations associated with the Highly Complex category.}
 \end{figure}
   We find that the percentage of languages with processes resulting in affricates is much higher for languages in the Simple category than the other three, although this trend is not linear. The trend in processes resulting in palato-alveolar articulations shows a moderate but steady decrease with syllable structure complexity. Processes producing uvulars are generally infrequent, occurring in only seven languages in the sample, and this trend is different from the others, peaking in the Complex category. Thus it would seem that the processes producing palato-alveolars and affricates drive the trend by which this group of processes is found more frequently in languages with simpler syllable structure.
 
@@ -330,7 +402,19 @@ Conditioning environment & \textit{N} = 32 & \textit{N} = 9 & \textit{N} = 36 & 
   Here I examine more closely the allophonic processes resulting in palatalization, labialization, and velarization in the sample. In \figref{fig:7.7} I show the percentage of languages in each category which have such processes.
 
 \begin{figure}
-\caption{\label{fig:7.7} Percentage of languages in each syllable structure complexity category with allophonic processes resulting in articulations associated with assimilation of consonants to vowels.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig77.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:7.7}Percentage of languages in each syllable structure complexity category with allophonic processes resulting in articulations associated with assimilation of consonants to vowels.}
 \end{figure}
   Recall that in the analyses shown in Figures \ref{fig:7.2} and \ref{fig:7.4}, the assimilation processes did not show the expected trend with respect to syllable structure complexity; that is, these processes were not more prevalent in languages with simpler syllable structure. Here we find that labialization and velarization, besides being relatively infrequent in the language sample, do not show any strong patterns with respect to syllable structure complexity. On the other hand, the palatalization trend in \figref{fig:7.7} is similar to the one in \figref{fig:7.6} for palato-alveolars. This is unsurprising, given that these are very similar process types.
 
@@ -358,7 +442,19 @@ Conditioning environment & \textit{N} = 25 & \textit{N} = 11 & \textit{N} = 3 & 
   Here I examine processes resulting in glide strengthening and other increased constriction. The percentage of languages having these process types in each syllable structure category is given in \figref{fig:7.8}.
 
 \begin{figure}
-\caption{\label{fig:7.8} Percentage of languages in each syllable structure complexity category with allophonic processes resulting in articulations associated with strengthening.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig78.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:7.8}Percentage of languages in each syllable structure complexity category with allophonic processes resulting in articulations associated with strengthening.}
 \end{figure}
 
   Recall from the trends in Figures \ref{fig:7.2} and \ref{fig:7.4} that the prevalence of fortition processes in general was found to slightly decrease with syllable structure complexity. Judging from the pattern in \figref{fig:7.8} it would appear that the trend was driven by the other increased constriction processes rather than by glide strengthening.
@@ -387,7 +483,19 @@ Conditioning environment & Glide strengthening & Other increased constriction & 
   The percentage of languages in each category which have allophonic processes resulting in articulations associated with the Simple category — flaps/taps or prenasalization — can be found in \figref{fig:7.9}.
 
 \begin{figure}
-\caption{\label{fig:7.9} Percentage of languages in each syllable structure complexity category with allophonic processes resulting in articulations associated with lower syllable complexity.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig79.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:7.9}Percentage of languages in each syllable structure complexity category with allophonic processes resulting in articulations associated with lower syllable complexity.}
 \end{figure}
 
   Recall from the analysis in \figref{fig:7.5} that this group of processes showed an erratic pattern with respect to syllable structure complexity. The pattern here which most closely resembles the one for the group of processes as a whole is the flap/tap process type. There were only two languages with processes resulting in prenasalization in the entire sample.
@@ -416,7 +524,19 @@ Conditioning environment & Flap/tap & Prenasalization & Total for group\\
   Other processes resulting in lenition or sonorization, specifically those with outcomes of obstruent voicing, spirantization, debuccalization, or consonants becoming glides or vowels, are examined here. See \figref{fig:7.10} for the percentage of languages in each syllable structure complexity category which have such processes.
 
 \begin{figure}
-\caption{\label{fig:7.10} Percentage of languages in each syllable structure complexity category with allophonic processes resulting in lenition or sonorization.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig710.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:7.10}Percentage of languages in each syllable structure complexity category with allophonic processes resulting in lenition or sonorization.}
 \end{figure}
   Recall that lenition/sonorization processes as a group did not show a coherent trend with respect to syllable structure complexity in Figures \ref{fig:7.3} and \ref{fig:7.5}. In the analysis here, we find that both obstruent voicing and spirantization processes show generally rising, although not linear, trends. These two patterns are strikingly similar to one another. Interestingly, in the sample there is very little overlap in the processes themselves (i.e., processes which have outcomes of both spirantization and obstruent voicing), and only a third of the languages with either of these processes have both of them.
 
@@ -478,7 +598,20 @@ Lenition and sonorization & \textit{Obstruent voicing} & increasing & —\\
 
   
 \begin{figure}
-\caption{\label{fig:7.11} Percentage of languages with consonant allophony process types examined here conditioned by word stress.}
+\begin{tikzpicture}
+\pgfplotstableread{data/fig711.csv}{\table}
+    \pgfplotstablegetcolsof{\table}
+    \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
+            \begin{axis}[easterdayline,legend style={font=\footnotesize,anchor=north west,text width=3.75cm,minimum height=.9\baselineskip},]
+            \foreach \i in {1,...,\numberofcols} {
+                \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
+                \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
+                \addlegendentryexpanded{\colname}
+            }
+            \addlegendimage{empty legend}\addlegendentry{}
+            \end{axis}                                                                           
+\end{tikzpicture}
+\caption{\label{fig:7.11}Percentage of languages with consonant allophony process types examined here conditioned by word stress.}
 \end{figure}
 
   Note that the pattern in \figref{fig:7.11} is subtler than the analogous one in \figref{fig:7.1} (also that the scale has been reduced to 0-40\% for \figref{fig:7.11}). That is because the pattern in \figref{fig:7.1} includes languages with \textit{any} reported processes of stress-conditioned consonant allophony in the sample, including the very common processes of aspiration and consonant lengthening. The consonant processes considered here are limited to those relevant to the hypotheses, and stress is evidently not a strong conditioning environment for them.
