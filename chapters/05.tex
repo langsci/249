@@ -89,9 +89,9 @@ diˈdedilaj {\textasciitilde} diˈdedlaj\\
 
 \ea\label{ex:5.4}
   H\textsubscript{1}: As syllable structure complexity increases, so does the proportion of languages in which the placement of word stress is unpredictable.
-
-\ea\label{ex:5.5}
 \z
+  
+\ea\label{ex:5.5}
   H\textsubscript{2}: As syllable structure complexity increases, word stress has stronger phonetic and phonological effects in languages.
 \z
 
@@ -544,15 +544,15 @@ The coding for each language in the sample can be found in Appendix B.
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
             \begin{axis}[easterdaystacked,reverse stacked plots=false,
-                                xticklabels={S,MC,C,HC},
+                                xticklabels={S,MC,C,HC},legend style={cells={align=left}}
                         ]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+[
                     /pgf/number format/read comma as period, fill
                     ] table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
-                \addlegendentryexpanded{\colname}
             }
+            \legend{Fixed,Weight-sensitive,Morphologically or\\Lexically Conditioned}
             \end{axis}                                                                           
 \end{tikzpicture}
 \end{figure}

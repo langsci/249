@@ -18,7 +18,7 @@
 
   In articulatory terms, consonants and vowels are distinguished from one another by the degree to which the vocal tract is constricted in their production, with consonants having greater constriction than vowels. Consonants are typically classified by their articulatory characteristics which include phonation, the place of constriction in the vocal tract, and the manner of constriction.
 
-  Consonant phoneme inventory size is a common point of comparison in crosslinguistic studies of phonological systems. In the 563-language sample in \citet{Maddieson2013b}, the languages have an average of 22.7 consonant phonemes, though values range widely from six consonants (in Rotokas) to 122 consonants (in !Xóõ). There are areal patterns to the distribution of consonant inventory size. Small inventories (6-14 consonants) are common in New Guinea and the Amazon region of South America. Large consonant inventories (26 or more consonants) are concentrated in the Pacific Northwest and northern coast of North America, northern Europe, the Caucasus region, and regions of  Africa.
+  Consonant phoneme inventory size is a common point of comparison in cross\-linguistic studies of phonological systems. In the 563-language sample in \citet{Maddieson2013b}, the languages have an average of 22.7 consonant phonemes, though values range widely from six consonants (in Rotokas) to 122 consonants (in !Xóõ). There are areal patterns to the distribution of consonant inventory size. Small inventories (6-14 consonants) are common in New Guinea and the Amazon region of South America. Large consonant inventories (26 or more consonants) are concentrated in the Pacific Northwest and northern coast of North America, northern Europe, the Caucasus region, and regions of  Africa.
 
   One of the contributions of the 317-language survey in \citet{Maddieson1984} was the establishment of crosslinguistic frequency patterns for consonant phonemes. The following consonants are the 20 most frequently present in the inventories of the language sample (* indicates that dental and alveolar consonants have been pooled).
 
@@ -367,7 +367,7 @@ Vowel length & S & MC & C & HC\\
 {Non-contrastive} & 16 & 12 & 11 & 14\\
 \lspbottomrule
 \end{tabularx}
-\caption{\label{tab:4.3}Contrastive vowel length in the sample. Note that Maori (in the Simple category) is reported to have contrastive vowel length for one vowel quality, but tautosyllabic sequences of identical vowels for other vowel qualities. (In Maori, nearly all possible combinations of two vowels can be found to occur tautosyllabically in normal speech. \citet[524-8]{Bauer1999} uses this distribution to justify the analysis of all phonetically long vowels as sequences of identical vowels. However, phonetic [aː] has a much higher frequency than would be expected if a sequential analysis were accepted, so Bauer analyzes this particular vowel quality as having contrastive length, while [iː], [ɛː], etc. are taken to be sequences.) Therefore the numbers in the Simple column add up to 25.}\todo[inline]{Footnotes don't work in captions}
+\caption{\label{tab:4.3}Contrastive vowel length in the sample. Note that Maori (in the Simple category) is reported to have contrastive vowel length for one vowel quality, but tautosyllabic sequences of identical vowels for other vowel qualities. (In Maori, nearly all possible combinations of two vowels can be found to occur tautosyllabically in normal speech. \citet[524-8]{Bauer1999} uses this distribution to justify the analysis of all phonetically long vowels as sequences of identical vowels. However, phonetic [aː] has a much higher frequency than would be expected if a sequential analysis were accepted, so Bauer analyzes this particular vowel quality as having contrastive length, while [iː], [ɛː], etc. are taken to be sequences.) Therefore the numbers in the Simple column add up to 25.}\todo[inline]{Footnotes don't work in captions; moved Fn to caption}
 \end{table}
 
   Over half of the languages in the sample (53/100) do not have contrastive vowel length. Vowel length distinctions are somewhat less common in the languages of the Simple category than those of the other categories; however, this trend is not significant in a chi-square test. In terms of geographic distribution, all six macro-areas examined here have four or more languages with vowel length contrasts, with this pattern being most common in North America (12 languages) and least common in Eurasia (four languages).
@@ -857,29 +857,6 @@ post-aspiration\\
   
 \begin{figure}
 \includegraphics[width=\textwidth]{figures/fig46.png}
-\begin{tikzpicture}
-            \begin{axis}[
-                    ybar,
-                    ylabel={\textit{N} languages},
-                    xtick=data,
-                    axis lines*=left,
-                    ymin=0,
-                    scaled y ticks=false,
-                    xticklabel style={font=\footnotesize,rotate=66, anchor=east, align=right,text width=3.5cm},
-                    xticklabels = {{Labial-velar},{Bilabial},{Dental/alveolar},{Dental and alveolar},{Alveolo-palatal},{Palatal},{Velar},{Glottal},{Labiodental},{Palato-alveolar},{Retroflex},{Uvular},{Pharyngeal},{Palatalization},{Labialization},{Pharyngealization},{Velarization}},
-                    ticklabel style={font=\footnotesize},
-                    width=\textwidth,
-                    height=5cm,
-                    enlarge x limits={0.05},
-                    nodes near coords,
-                    nodes near coords style={text=black,font=\footnotesize},
-                    ]
-                \addplot+[
-                     fill=black,draw=none
-                    ] coordinates {(0,7) (1,99) (2,73) (3,27) (4,11) (5,32) (6,99) (7,76) (8,43) (9,52) (10,20) (11,22) (12,4) (13,6) (14,22) (15,1) (16,1) };
-%                   
-\end{axis}
-\end{tikzpicture}
 \caption{\label{fig:4.6}Areal distribution of languages in sample with no voicing contrast in obstruents.}
 \end{figure}
 
@@ -934,15 +911,38 @@ velarization\\
   \figref{fig:4.7} shows how many languages in the sample each place feature is found in. Note that in the figure I have merged languages which have dental, alveolar or dental/alveolar articulations into one category of \textit{dental/alveolar}. This is to distinguish languages reported to have only one of these places of articulation from those reported to have both dental and alveolar articulations (the \textit{dental and alveolar} category).
 
 
-\begin{figure}  
-\caption{\label{fig:4.7} Place features in consonant inventories, by number of languages in which they are present.}
+\begin{figure}
+\begin{tikzpicture}
+            \begin{axis}[
+                    ybar,
+                    ylabel={\textit{N} languages},
+                    xtick=data,
+                    axis lines*=left,
+                    ymin=0,
+                    scaled y ticks=false,
+                    xticklabel style={font=\footnotesize,rotate=66, anchor=east, align=right,text width=3.5cm},
+                    xticklabels = {{Labial-velar},{Bilabial},{Dental/alveolar},{Dental and alveolar},{Alveolo-palatal},{Palatal},{Velar},{Glottal},{Labiodental},{Palato-alveolar},{Retroflex},{Uvular},{Pharyngeal},{Palatalization},{Labialization},{Pharyngealization},{Velarization}},
+                    ticklabel style={font=\footnotesize},
+                    width=\textwidth,
+                    height=5cm,
+                    enlarge x limits={0.05},
+                    nodes near coords,
+                    nodes near coords style={text=black,font=\footnotesize},
+                    ]
+                \addplot+[
+                     fill=black,draw=none
+                    ] coordinates {(0,7) (1,99) (2,73) (3,27) (4,11) (5,32) (6,99) (7,76) (8,43) (9,52) (10,20) (11,22) (12,4) (13,6) (14,22) (15,1) (16,1) };
+%                   
+\end{axis}
+\end{tikzpicture}
+\caption{\label{fig:4.7}Place features in consonant inventories, by number of languages in which they are present.}
 \end{figure}
 
   Several of the place features are (nearly) universal in the sample. All languages except for Mohawk have \textit{bilabial} consonants, and all but Wutung have \textit{velar} consonants. All languages in the sample have either \textit{dental/alveolar} or \textit{dental and alveolar} consonants; there is no trend with respect to syllable structure complexity for either of these features.
 
   There are five place features in the sample that are present in fewer than ten languages. The \textit{labial-velar} feature occurs in seven languages, six of which are spoken in Africa (Southern Bobo Madaré, Doyayo, Ewe, Southern Grebo, Lelepa, Ma’di, and Yoruba). Secondary \textit{palatalization} is present in six languages (Cocopa, Pinotepa Mixtec, Polish, Paiwan, Towa, and Urarina). The remaining rare place features are found only in languages with Highly Complex syllable structure. Secondary \textit{pharyngealization} and \textit{velarization} are present in one language each (Tashlhiyt and Albanian, respectively). \textit{Pharyngeal} consonants are found in languages from areas which are famous ‘hotspots’ of complex syllable structure: the Pacific Northwest (Nuu-chah-nulth, Thompson), the Caucasus (Kabardian), and the Atlas Mountains (Tashlhiyt).\footnote{{Here the term} \textrm{\textit{pharyngeal} }\textrm{also includes epiglottal consonants.}}
 
-  The remaining eight place features -- \textit{labiodental}, \textit{alveolo-palatal, palato-alveolar}, \textit{retroflex}, \textit{palatal}, \textit{uvular}, \textit{glottal}, and secondary \textit{labialization} -- are found in more than ten languages each. Of these, there are three features which show a (near-)monotonic increase or decrease in frequency with respect to syllable structure complexity. These are shown in \figref{fig:4.8}.
+  The remaining eight place features -- \textit{labiodental}, \textit{alveolo-palatal, palato-alveolar}, \textit{retroflex}, \textit{palatal}, \textit{uvular}, \textit{glottal}, and secondary \textit{labialization} -- are found in more than ten languages each. Of these, there are three features which show a \mbox{(near-)}\linebreak monotonic increase or decrease in frequency with respect to syllable structure complexity. These are shown in \figref{fig:4.8}.
 
 \begin{figure}
 \begin{tikzpicture}
@@ -1186,7 +1186,7 @@ The trend with affricates, though not linear, is
 
 \subsection{Summary of consonant patterns in sample}\label{sec:4.4.6}
 
-  Three hypotheses were formulated in \sectref{sec:4.1.4} with respect to consonant inventory patterns and syllable structure complexity. First, it was hypothesized that consonant phoneme inventory size would increase with syllable structure complexity. This relationship was upheld in the current sample and was found to be statistically significant. Second, it was hypothesized that the number of elaborated articulations present in consonant phoneme inventories would increase with syllable structure complexity. As expected, this correlation was found to be positive and significant, though the difference in average number of elaborations was not dramatic between the categories at the two extremes of syllable structure complexity. Finally, it was hypothesized that languages with more complex syllable structure would have different kinds of consonants in their inventories than languages with simpler syllable structure. The results of the analyses in \sectref{sec:4.4.3}-5 suggest that this is the case, as there are specific consonant articulations which are more frequently present in languages of the Complex and Highly Complex categories. However, it was also found that there are consonant types which occur more frequently in languages with simpler syllable structures. Thus it can be said, more generally, that languages with different syllable patterns also tend to have different kinds of consonants in their phoneme inventories.
+  Three hypotheses were formulated in \sectref{sec:4.1.4} with respect to consonant inventory patterns and syllable structure complexity. First, it was hypothesized that consonant phoneme inventory size would increase with syllable structure complexity. This relationship was upheld in the current sample and was found to be statistically significant. Second, it was hypothesized that the number of elaborated articulations present in consonant phoneme inventories would increase with syllable structure complexity. As expected, this correlation was found to be positive and significant, though the difference in average number of elaborations was not dramatic between the categories at the two extremes of syllable structure complexity. Finally, it was hypothesized that languages with more complex syllable structure would have different kinds of consonants in their inventories than languages with simpler syllable structure. The results of the analyses in \sectref{sec:4.4.3}--\ref{sec:4.4.5} suggest that this is the case, as there are specific consonant articulations which are more frequently present in languages of the Complex and Highly Complex categories. However, it was also found that there are consonant types which occur more frequently in languages with simpler syllable structures. Thus it can be said, more generally, that languages with different syllable patterns also tend to have different kinds of consonants in their phoneme inventories.
 
   Trends positively associating \textit{uvular}, \textit{palato-alveolar}, \textit{affricate}, and \textit{ejective} articulations with syllable structure complexity were found to be statistically significant in the current language sample, while trends negatively associating a \textit{voicing contrast in obstruents}, \textit{palatals}, \textit{flaps/taps} and \textit{prenasalization} with syllable complexity were not found to be statistically significant. However, given the relatively small sample size considered, it is possible that different results might be found for all of these trends in a larger sample. The robustness of each of these trends was investigated in the 501 publicly-available languages in LAPSyD \citep{MaddiesonEtAl2013}. Within LAPSyD, it was found that most of these articulations -- all except for \textit{voicing contrast in obstruents} and \textit{palatals} -- have weak but highly significant positive or negative correlations with syllable structure complexity (measured as the sum of maximal syllable margins). These verified correlations, which correspond in directionality to those patterns established above, are listed and marked by asterisks in \tabref{tab:4.15}. Additionally, the table lists in italics two general trends established in the present study with respect to articulations in the palatal and postvelar regions.
 
@@ -1240,7 +1240,7 @@ The trend with affricates, though not linear, is
 
   This list does not include two more general segmental patterns of languages with Highly Complex syllable structure: at least one place distinction in the region of the hard palate, and a more richly elaborated set of place distinctions in the post-velar region.
 
-  Recall the analyses in \sectref{sec:3.4.1}-2 which established two different distributions in the languages of the Highly Complex category. In eight languages -- Cocopa, Georgian, Itelmen, Polish, Tashlhiyt, Thompson, Tohono O’odham, and Yakima Sahaptin -- Highly Complex structures were found to be a prevalent pattern. In six languages -- Alamblak, Bench, Doyayo, Kunjen, Menya, and Wutung -- Highly Complex structures were found to be a minor pattern. As discussed in \chapref{sec:3}, the languages within each of these groups share similar patterns with respect to the occurrence of Highly Complex structures at each syllable margin, restrictions on consonant combinations in these structures, and the relative frequency of these structures. The 11 languages which belong to neither group -- Albanian, Camsá, Kabardian, Lezgian, Mohawk, Nuu-chah-nulth, Passamaquoddy-Maliseet, Yine, Qawasqar, Semai, and Tehuelche -- have syllable patterns which vary with respect to the different features examined or which fall somewhere in between the patterns of the two extreme groups.
+  Recall the analyses in \sectref{sec:3.4.1}--\ref{sec:3.4.2} which established two different distributions in the languages of the Highly Complex category. In eight languages -- Cocopa, Georgian, Itelmen, Polish, Tashlhiyt, Thompson, Tohono O’odham, and Yakima Sahaptin -- Highly Complex structures were found to be a prevalent pattern. In six languages -- Alamblak, Bench, Doyayo, Kunjen, Menya, and Wutung -- Highly Complex structures were found to be a minor pattern. As discussed in \chapref{sec:3}, the languages within each of these groups share similar patterns with respect to the occurrence of Highly Complex structures at each syllable margin, restrictions on consonant combinations in these structures, and the relative frequency of these structures. The 11 languages which belong to neither group -- Albanian, Camsá, Kabardian, Lezgian, Mohawk, Nuu-chah-nulth, Passamaquoddy-Maliseet, Yine, Qawasqar, Semai, and Tehuelche -- have syllable patterns which vary with respect to the different features examined or which fall somewhere in between the patterns of the two extreme groups.
 
   It is reasonable to expect that if highly complex syllable structure has other phonetic and phonological correlates, then languages which differ in the extent to which these syllable structures are prominent might also exhibit the other correlates to different degrees. In \tabref{tab:4.16} the languages of the Highly Complex portion of the sample are divided into the three groups described above. The properties of vowel and consonant inventories associated with Highly Complex syllable structure and listed in \REF{ex:4.34} above are given in the columns. A check mark indicates that a language has the expected property; a shaded cell indicates that it does not. For consonant phoneme inventory size and number of elaborations, I have designated a value greater than or equal to the mean for the category to be the expected property.
 
@@ -1301,7 +1301,7 @@ The trend with affricates, though not linear, is
 
   In \sectref{sec:4.5.2} I discuss reported processes of sound change which result in the consonantal patterns associated with Highly Complex syllable structure. In \sectref{sec:4.5.3} I discuss reported processes resulting in the consonantal patterns associated with Simple syllable structure. In the following I include historical, comparative, and synchronic accounts of sound change processes. Although historical evidence is best because it involves more or less direct observation, the history of written language is such that there are very few languages, language families, and regions for which such evidence exists on a deep time scale. Including reports of synchronic and comparative processes greatly expands the range of data available, but it does come with the caveat that the reported patterns may have other possible analyses. Many of the synchronic processes reported here are from AlloPhon, a database of over 800 phonetically-conditioned processes in 81 diverse languages (\citealt{BybeeEasterday2019}).
 
-  In \sectref{sec:4.5.4}, I compare the patterns reported in \sectref{sec:4.5.2}-3 and discuss their broad implications with respect to the diachronic development of highly complex syllable structure and syllable typology more generally.
+  In \sectref{sec:4.5.4}, I compare the patterns reported in \sectref{sec:4.5.2}--\ref{sec:4.5.3} and discuss their broad implications with respect to the diachronic development of highly complex syllable structure and syllable typology more generally.
 
 \subsection{Articulations and contrasts characteristic of the Highly Complex category} \label{sec:4.5.2}
 
@@ -1641,7 +1641,7 @@ Trills may also vary with taps when occurring in a consonant cluster. For exampl
 
 \subsection{Segmental patterns, sound change, and syllable structure complexity}\label{sec:4.5.4}
 
-  In \sectref{sec:4.4} it was noted that languages on opposite extremes of the syllable structure complexity cline tend to have different kinds of consonant articulations. Languages in the Highly Complex category are more likely to have certain consonant place features and manner features characteristic of obstruents. Languages in the Simple category are more likely to have certain manner features related to sonorants. This segmental distribution prompted an investigation into the common paths by which these specific articulations and contrasts are known to develop, since sound patterns often reflect processes of sound change. The reported historical, comparative, and synchronic evidence presented in \sectref{sec:4.5.2}-3 shows a similar divide according to the kinds of processes that most commonly produce the segments characteristic of languages in the Highly Complex and Simple categories.
+  In \sectref{sec:4.4} it was noted that languages on opposite extremes of the syllable structure complexity cline tend to have different kinds of consonant articulations. Languages in the Highly Complex category are more likely to have certain consonant place features and manner features characteristic of obstruents. Languages in the Simple category are more likely to have certain manner features related to sonorants. This segmental distribution prompted an investigation into the common paths by which these specific articulations and contrasts are known to develop, since sound patterns often reflect processes of sound change. The reported historical, comparative, and synchronic evidence presented in \sectref{sec:4.5.2}--\ref{sec:4.5.3} shows a similar divide according to the kinds of processes that most commonly produce the segments characteristic of languages in the Highly Complex and Simple categories.
 
   The consonant articulations and contrasts associated with the Highly Complex category tend to be brought about through processes of \textit{assimilation} and \textit{fortition}. Assimilation is very often to the place of an adjacent vowel: palato-alveolars and affricates typically assimilate to a high and/or front vowel and uvulars to a low and/or back vowel. In the case of ejectives, the assimilation is of an oral obstruent to a following glottal stop. In gestural terms, the assimilatory processes producing palato-alveolars and ejectives, in particular, involve a large amount of temporal overlap of the associated consonantal and vocalic gestures; in fact, \citet{Bateman2007} argues that it is the amount of temporal overlap of the high front tongue gesture of the vowel that distinguishes secondary palatalization from palatalization resulting in palato-alveolars. Affricates and palato-alveolars may also come about through fortition, and specifically processes of glide strengthening. Common conditioning environments for such processes are syllable-initial position and, again, adjacent high and/or front vowels. The syllable-initial position, like the high front tongue body configuration, is argued to be a strong environment for articulation. It is associated with a higher degree and duration of linguopalatal contact, higher tongue pressure against the palate, generally tighter consonant constriction, and greater synchronicity with vocalic gestures than syllable-final position (\citealt{Byrd1996b,Fougeron1999,KeatingEtAl2003,GoldsteinEtAl2006}).
 
@@ -1651,7 +1651,7 @@ Trills may also vary with taps when occurring in a consonant cluster. For exampl
 
   Of course, sound change may come about through very complex interactions of phonetic tendencies, morphosyntactic patterns, frequency of use, and social factors. Hualde notes that the phonetic mechanisms behind sound change are perhaps more readily transparent than “the psychological and social processes that lead to their conventionalization in specific environments and to the recategorization of sounds” \citep[2222]{Hualde2011}. In a typological study such as this, it is not feasible to consider all of the additional factors which may have contributed to the sound patterns observed. However, it is encouraging that a consideration of phonetic factors alone has yielded the associations with different types of sound change observed here.
 
-  It would seem that the development of highly complex syllable structure is likely to be accompanied by processes of sound change which are realized in articulatory terms as extreme gestural overlap and/or increased magnitude of gestures in strong positions. Specifically, the findings may suggest differences in patterns of temporal organization in the languages with more complex syllable structure, including more compressed timing relationships between consonants and vowels or glottal articulations. The question of whether these sound changes might be an earlier development, a later development, or a secondary effect of the same processes which result in increased syllable structure complexity will be explored in Chapters 7 and 8.
+  It would seem that the development of highly complex syllable structure is likely to be accompanied by processes of sound change which are realized in articulatory terms as extreme gestural overlap and/or increased magnitude of gestures in strong positions. Specifically, the findings may suggest differences in patterns of temporal organization in the languages with more complex syllable structure, including more compressed timing relationships between consonants and vowels or glottal articulations. The question of whether these sound changes might be an earlier development, a later development, or a secondary effect of the same processes which result in increased syllable structure complexity will be explored in Chapters~\ref{sec:7} and~\ref{sec:8}.
 
   The findings here suggest that there is more to be gained from the studies presented here than just a phonological characterization of languages with highly complex syllable structure. Languages with simple syllable structure, too, tend to be characterized by a set of phonological properties. The integrated findings regarding syllable structure complexity, phoneme inventories, and sound change evoke the holistic phonological typologies of the speech rhythm literature (\citealt{Roach1982,Dauer1983,Auer1993}) and the Prague School \citep{Isačenko1939/1940}. This raises the question of whether a holistic phonological typology defined by syllable structure complexity is tenable. This point will be revisited in the studies presented in upcoming chapters, exploring suprasegmental features, vowel reduction, and specific kinds of consonant allophony in the language sample.
 

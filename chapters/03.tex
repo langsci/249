@@ -659,7 +659,7 @@ stomach-\textsc{sg}\\
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
             \begin{axis}[easterdaystacked,
-                                xticklabels={{Moderately Complex}, Complex, {Highly Complex}},
+                                xticklabels={{MC}, C, {HC}},
                         ]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+[
@@ -680,7 +680,7 @@ stomach-\textsc{sg}\\
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
             \begin{axis}[easterdaystacked,
-                                xticklabels={Complex, {Highly Complex}},
+                                xticklabels={C, {HC}},
                         ]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+[
@@ -697,7 +697,7 @@ stomach-\textsc{sg}\\
 
   The figures show that as syllable structure complexity increases, both maximal onset and maximal coda clusters are more likely to have morphologically complex patterns, confirming the hypothesis in (\ref{ex:3.4}a).
 
-  The patterns in figures 3.5-3.6 are combined in \figref{fig:3.7} in order to show the general trend for morphologically complex patterns in maximal syllable-marginal clusters with respect to syllable structure complexity in the language sample. In this figure onset and coda patterns are collapsed, and the “both contexts” and “only morphologically complex” patterns are combined. For each category, the figure shows the percentage of languages with complex syllable margins for which morphologically complex patterns occur in either or both maximal syllable margins.
+  The patterns in Figures~\ref{fig:3.5}--\ref{fig:3.6} are combined in \figref{fig:3.7} in order to show the general trend for morphologically complex patterns in maximal syllable-marginal clusters with respect to syllable structure complexity in the language sample. In this figure onset and coda patterns are collapsed, and the “both contexts” and “only morphologically complex” patterns are combined. For each category, the figure shows the percentage of languages with complex syllable margins for which morphologically complex patterns occur in either or both maximal syllable margins.
 
 
 \begin{figure}  
@@ -717,7 +717,7 @@ stomach-\textsc{sg}\\
                     bar width=1cm,
                     nodes near coords,
                     nodes near coords style={text=black,font=\footnotesize},
-                    xticklabels={{Moderately Complex}, Complex, {Highly Complex}},
+                    xticklabels={{MC}, C, {HC}},
                     ]
                 \addplot+[
                      fill=black,draw=none
