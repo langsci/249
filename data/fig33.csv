@@ -1,0 +1,5 @@
+NAME	{Only morphologically complex}	{Both patterns}	{Only morpheme-internal}
+CC	9.52380952380952	23.8095238095238	66.6666666666667
+CCC	20	6.66666666666667	73.3333333333333
+CCCC	62.5	0	37.5
+{CCCCC or more}	100	0	0
