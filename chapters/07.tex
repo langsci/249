@@ -13,7 +13,7 @@
 \pgfplotstableread{data/fig71.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdayline]
+            \begin{axis}[easterdayline,ymax=100]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
@@ -276,7 +276,7 @@ Most of the languages in the sample (86/100) had at least one of the process typ
 \pgfplotstableread{data/fig72.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdayline]
+            \begin{axis}[easterdayline,ymax=100]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
@@ -296,7 +296,7 @@ Most of the languages in the sample (86/100) had at least one of the process typ
 \pgfplotstableread{data/fig73.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdayline]
+            \begin{axis}[easterdayline,ymax=100]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
@@ -315,7 +315,7 @@ Most of the languages in the sample (86/100) had at least one of the process typ
 \pgfplotstableread{data/fig74.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdayline]
+            \begin{axis}[easterdayline,ymax=50]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
@@ -335,7 +335,7 @@ Most of the languages in the sample (86/100) had at least one of the process typ
 \pgfplotstableread{data/fig75.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdayline]
+            \begin{axis}[easterdayline,ymax=50]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
@@ -361,7 +361,7 @@ Most of the languages in the sample (86/100) had at least one of the process typ
 \pgfplotstableread{data/fig76.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdayline]
+            \begin{axis}[easterdayline,ymax=100]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
@@ -401,7 +401,7 @@ Conditioning environment & \textit{N} = 32 & \textit{N} = 9 & \textit{N} = 36 & 
 \pgfplotstableread{data/fig77.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdayline]
+            \begin{axis}[easterdayline,ymax=100]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
@@ -442,7 +442,7 @@ Conditioning environment & \textit{N} = 32 & \textit{N} = 9 & \textit{N} = 36 & 
 \pgfplotstableread{data/fig78.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdayline]
+            \begin{axis}[easterdayline,ymax=100]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
@@ -484,7 +484,7 @@ environment  & strengthening & constriction \\
 \pgfplotstableread{data/fig79.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdayline]
+            \begin{axis}[easterdayline,ymax=100]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
@@ -525,7 +525,7 @@ Conditioning environment & Flap/tap & Prenasalization & Total for group\\
 \pgfplotstableread{data/fig710.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdayline]
+            \begin{axis}[easterdayline,ymax=100]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
@@ -600,7 +600,7 @@ Lenition and sonorization & \textit{Obstruent voicing} & increasing & --\\
 \pgfplotstableread{data/fig711.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdayline,legend style={font=\footnotesize,anchor=north west,text width=3.75cm,minimum height=.9\baselineskip},]
+            \begin{axis}[easterdayline,legend style={font=\footnotesize,anchor=north west,text width=3.75cm,minimum height=.9\baselineskip},ymax=40]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend

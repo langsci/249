@@ -262,6 +262,7 @@ This is presented as evidence that the high front element in these structures be
                     xtick=data,
                     axis lines*=left,
                     ymin=0,
+                    ymax=40,
                     scaled y ticks=false,
                     legend pos=north west,
                     ticklabel style={font=\footnotesize\scshape},
@@ -818,7 +819,7 @@ post-aspiration\\
 \pgfplotstableread{data/fig45.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdayline]
+            \begin{axis}[easterdayline,ymax=100]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
@@ -926,7 +927,7 @@ velarization\\
 \pgfplotstableread{data/fig48.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdayline]
+            \begin{axis}[easterdayline,ymax=100]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
