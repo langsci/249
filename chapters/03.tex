@@ -275,6 +275,7 @@ Additionally, more detailed information on syllable patterns, restrictions on cl
                     xtick=data,
                     axis lines*=left,
                     ymin=0,
+                    ymax=60,
                     scaled y ticks=false,
                     legend pos=north west,
                     ticklabel style={font=\footnotesize\scshape},
@@ -593,7 +594,8 @@ stomach-\textsc{sg}\\
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
             \begin{axis}[easterdaystacked,
-                                xticklabels={CC,CCC,CCCC,{CCCCC or more}},
+                                xticklabel style={align=center},
+                                xticklabels={CC,CCC,CCCC,{CCCCC\\or more}},
                         ]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+[
@@ -614,7 +616,8 @@ stomach-\textsc{sg}\\
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
             \begin{axis}[easterdaystacked,
-                                xticklabels={CC,CCC,CCCC,{CCCCC or more}},
+                                xticklabel style={align=center},
+                                xticklabels={CC,CCC,CCCC,{CCCCC\\or more}},
                         ]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+[
@@ -680,6 +683,7 @@ stomach-\textsc{sg}\\
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
             \begin{axis}[easterdaystacked,
                                 xticklabels={C, {HC}},
+                                enlarge x limits={0.7}
                         ]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+[
@@ -710,7 +714,7 @@ stomach-\textsc{sg}\\
                     ymax=100,
                     legend pos=north west,
                     ticklabel style={font=\footnotesize},
-                    width=.75\textwidth,
+                    width=.6\textwidth,
                     enlarge x limits={.2},
                     height=5cm,
                     bar width=1cm,
@@ -720,7 +724,7 @@ stomach-\textsc{sg}\\
                     ]
                 \addplot+[
                      fill=black,draw=none
-                    ] coordinates {(0,22.2222222222222) (1,40) (2,75)};
+                    ] coordinates {(0,22) (1,40) (2,75)};
 \end{axis}
 \end{tikzpicture}
 \caption{\label{fig:3.7} Percentage of languages in each category exhibiting morphologically complex patterns in either or both of its maximal syllable margins.}

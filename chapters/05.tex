@@ -587,7 +587,7 @@ The coding for each language in the sample can be found in Appendix B.
 \pgfplotstableread{data/fig52.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdayline]
+            \begin{axis}[easterdayline,ymax=100]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
@@ -610,7 +610,7 @@ The coding for each language in the sample can be found in Appendix B.
 \pgfplotstableread{data/fig53.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdayline]
+            \begin{axis}[easterdayline,ymax=100]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
@@ -801,7 +801,7 @@ The coding for each language in the sample can be found in Appendix B.
 \pgfplotstableread{data/fig54.csv}{\table}
     \pgfplotstablegetcolsof{\table}
     \pgfmathtruncatemacro\numberofcols{\pgfplotsretval-1}
-            \begin{axis}[easterdayline]
+            \begin{axis}[easterdayline,ymax=100]
             \foreach \i in {1,...,\numberofcols} {
                 \addplot+ table [x index={1},y index={\i},x expr=\coordindex] {\table};
                 \pgfplotstablegetcolumnnamebyindex{\i}\of{\table}\to{\colname} % Adding column headers to legend
