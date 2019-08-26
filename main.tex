@@ -5,7 +5,7 @@
  
 % Everything following a % is ignored
 % Some lines start with %. Remove the % to include them
-\PassOptionsToPackage{issueandeditor=true}{biblatex}
+
 \documentclass[output=book,nonflat,modfonts,
   colorlinks,citecolor=brown, 
 %  draft,
@@ -14,7 +14,6 @@
 %  nobabel,
 %  booklanguage=german,
 %  multiauthors,
-    arseneau
 		  ]{langsci/langscibook}    
   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -26,12 +25,16 @@
 \input{localhyphenation.tex}
 \addbibresource{localbibliography.bib}
 
-%test
+\WarningsOff[microtype]
+\WarningFilter{microtype}{Unknown slot} 
+
+
+% \includeonly{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%             Frontmatter                      %%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \begin{document} 
- 
+%   \color{red}This repository is depreceated. Please use github.com/langsci/249.
 \input{localcommands.tex} 
   
 \maketitle                
@@ -46,8 +49,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%             Chapters                         %%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  
-  
+  {\color{red}This repository is depreceated. Please use github.com/langsci/249.}
 \include{chapters/01}  
 \include{chapters/02}  
 \include{chapters/03}  
@@ -57,9 +59,8 @@
 \include{chapters/07}  
 \include{chapters/08}  
 
-\appendix
-\include{chapters/appendixA}  
-\include{chapters/appendixB}     
+% \include{chapters/appendixA}  
+% \include{chapters/appendixB}     
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%             Backmatter                       %%% 
