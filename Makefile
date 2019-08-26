@@ -26,6 +26,13 @@ main.snd: main.bbl
 	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.sdx # ordering of references to footnotes
 	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.adx
 	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.ldx
+	sed -i 's/.*Office.*/\1/' main.adx
+	sed -i 's/.*Team.*/\1/' main.adx
+	sed -i 's/.*Bureau.*/\1/' main.adx
+	sed -i 's/.*Organisation.*/\1/' main.adx
+	sed -i 's/.*Organization.*/\1/' main.adx
+	sed -i 's/.*Embassy.*/\1/' main.adx
+	sed -i 's/.*Association.*/\1/' main.adx
 	python3 fixindex.py
 	mv mainmod.adx main.adx
 	makeindex -o main.and main.adx
@@ -92,6 +99,17 @@ paperhive:
 	sleep 3
 	curl -X POST 'https://paperhive.org/api/document-items/remote?type=langsci&id='`cat ID`
 	git checkout master 
+		
+firstedition:
+	git checkout gh-pages
+	git pull 
+	python getfirstedition.pdf `cat ID`
+	git add first_edition.pdf 
+	git commit -am 'provide first edition'
+	git push origin gh-pages 
+	git checkout master
+	curl -X POST 'https://paperhive.org/api/document-items/remote?type=langsci&id='`cat ID`
+	
 	
 proofreading.pdf:
 	pdftk main.pdf multistamp prstamp.pdf output proofreading.pdf 
@@ -101,6 +119,9 @@ chop:
 	egrep -o "\{[0-9]+\}\{chapter\*\.[0-9]+\}" main.toc| egrep -o "[0-9]+\}\{chapter"|egrep -o [0-9]+ > cuts.txt
 	egrep -o "\{chapter\}\{Index\}\{[0-9]+\}\{section\*\.[0-9]+\}" main.toc| grep -o "\..*"|egrep -o [0-9]+ >> cuts.txt
 	bash chopchapters.sh `grep "mainmatter starts" main.log|grep -o "[0-9]*"`
+	
+chapternames:
+	egrep -o "\{chapter\}\{\\\numberline \{[0-9]+}[A-Z][^\}]+\}" main.toc | egrep -o "[[:upper:]][^\}]+" > chapternames	
 	
 #housekeeping	
 clean:
@@ -144,7 +165,6 @@ README.md:
 	echo "Copyright: (c) 2017, the authors." >> README.md
 	echo "All data, code and documentation in this repository is published under the [Creative Commons Attribution 4.0 Licence](http://creativecommons.org/licenses/by/4.0/) (CC BY 4.0)." >> README.md
 
-	
 	
 supersede: convert cover.png -fill white -colorize 60%  -pointsize 64 -draw "gravity center fill red rotate -45  text 0,12 'superseded' "  superseded.png; display superseded.png
 
