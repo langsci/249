@@ -1,10 +1,12 @@
+\PassOptionsToPackage{issueandeditor=true}{biblatex}
 \documentclass[output=book,nonflat,modfonts,
   colorlinks,citecolor=brown, 
 %  draft,
-%    draftmode,  
+   draftmode,  
 %  showindex,
 %  nobabel, 
 %  multiauthors,
+    arseneau,
 		  ]{langsci/langscibook}    
   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -14,6 +16,7 @@
 \input{localmetadata.tex}
 \input{localpackages.tex}
 \input{localhyphenation.tex}
+\input{localcommands.tex} 
 \addbibresource{localbibliography.bib}
 
 \WarningsOff[microtype]
@@ -25,8 +28,7 @@
 %%%             Frontmatter                      %%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \begin{document} 
-%   \color{red}This repository is depreceated. Please use github.com/langsci/249.
-\input{localcommands.tex} 
+
   
 \maketitle                
 \frontmatter 
@@ -49,8 +51,9 @@
 \include{chapters/07}  
 \include{chapters/08}  
 
+\appendix
 \include{chapters/appendixA}  
-% \include{chapters/appendixB}     
+\include{chapters/appendixB}     
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%             Backmatter                       %%% 
