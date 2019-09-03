@@ -173,7 +173,7 @@
 
 \begin{table}
 \small
-\begin{tabularx}{\textwidth}{III}
+\begin{tabularx}{\textwidth}{IQQ}
 \lsptoprule
  & {Ute} & {Tohono O’odham}\\
  \midrule
@@ -203,9 +203,9 @@
  \tablevspace 
  {Vs affected by reduction}  & {all} & {all, high, short}\\
  \tablevspace 
- {V reduction environments} & {Consonant, Stress, Word} & {Consonant, Stress, Word, Phrase}\\
+ {V reduction environments} & {Consonant, Stress, Word} &\hangindent=.5em Consonant, Stress, Word, Phrase\\
  \tablevspace 
- {V reduction outcomes} & {Devoicing} & {Devoicing, Quality, Deletion}\\
+ {V reduction outcomes} & {Devoicing} &\hangindent=.5em Devoicing, Quality, Deletion\\
  \tablevspace 
  {C allophony resulting in S articulations, lenition/sonorization} & {{Flapping}}\newline {{Obstruent voicing}}\newline  {Spirantization} & {--}\\
 \tablevspace 
@@ -233,7 +233,7 @@
 
 \begin{table}
 \small
-\begin{tabularx}{\textwidth}{III}
+\begin{tabularx}{\textwidth}{IQQ}
 \lsptoprule
  & {Apurinã} & {Yine}\\
  \midrule 
@@ -259,7 +259,7 @@
  \tablevspace
  {Vs affected by reduction}  & {all} & {all, /a/}\\
  \tablevspace
- {V reduction environments} & {Stress, Word} & {Stress, Word, Phrase/Utterance}\\
+ {V reduction environments} & {Stress, Word} &\hangindent=.5em Stress, Word, Phrase/Utterance\\
  \tablevspace
  {V reduction outcomes} & {Devoicing} & {Devoicing, Quality}\\
  \tablevspace
@@ -289,7 +289,7 @@
 
 \begin{table}
 \small
-\begin{tabularx}{\textwidth}{III}
+\begin{tabularx}{\textwidth}{IQQ}
 \lsptoprule
  & {Yoruba} & {Lunda}\\
  \midrule 
@@ -343,7 +343,7 @@
 
 \begin{table}
 \small
-\begin{tabularx}{\textwidth}{III}
+\begin{tabularx}{\textwidth}{IQQ}
 \lsptoprule
  & {Darai} & {Albanian}\\
  {Syllable patterns} & Moderately Complex & Highly Complex\newline (intermediate)\\
@@ -396,7 +396,7 @@
 
 \begin{table}
 \small
-\begin{tabularx}{\textwidth}{III}
+\begin{tabularx}{\textwidth}{IQQ}
 \lsptoprule
  & {Maori} & {Lelepa}\\
  \midrule 
@@ -424,7 +424,7 @@
 \tablevspace
  {V reduction environments} & {Word, Utterance} & {Consonant, Stress, Word}\\
 \tablevspace
- {V reduction outcomes} & {Devoicing} & {Quality, Devoicing, Deletion}\\
+ {V reduction outcomes} & {Devoicing} & \hangindent=.5em Quality, Devoicing, Deletion\\
 \tablevspace
  {C allophony resulting in S articulations, lenition/sonorization} & {--} & { {Obstruent voicing}}\newline  {Spirantization}\\
 \tablevspace
@@ -464,7 +464,7 @@
 
 \ea\label{ex:8.3}
   \etriple{Lezgian}{Nakh-Daghestanian}{Azerbaijan, Russia}
-\begin{tabular}{@{}lll@{}}
+\begin{tabular}{@{}l@{\hspace{4\tabcolsep}}l@{\hspace{4\tabcolsep}}l@{}}
 Standard spelling & Phonemic form & Gloss\\
 \textit{čükwer}   &   t͡ʃʰʷχʷer  &  ‘pear’\\
 \textit{kifer}   &   kʰʲfer    &   ‘plaits’\\
@@ -566,7 +566,7 @@ This pattern of vowel deletion is extremely productive and applied quite general
 \begin{tikzpicture}[>=Triangle,baseline]
 \graph [branch down=7\baselineskip,grow right sep=1cm,nodes={font=\small,draw,rounded corners=2pt,text width=3.1cm,align=left}] {
 a[as={stress-conditioned allophonic C processes}] -> {b[as={phonologiza\-tion of fortition, assimilation processes}] -> d[as={palato-alveolar, uvular, affricate, ejective phonemes}], c[xshift=-1.625cm,as={phonologiza\-tion of lenition processes, phonemicization of associated articulations}]};
-e[as={domain-conditioned V devoicing},text width=3cm] ->[dashed] f[as={\itshape destabilization of stress patterns?},draw=none,text width=3.1cm] ->[dashed] {g[as={stress-conditioned V reduction, deletion},text width=3cm],h[as={syllabic Cs},yshift=3\baselineskip]} -> i[as={increased V reduction},text width=3.2cm] <- j[xshift=-4.475cm,yshift=-5\baselineskip,draw=none,as={\itshape stronger effects when morpheme/word ratio high, grammatical morphemes involved?},text width=3.2cm];
+e[as={domain-conditioned V devoicing},text width=3cm] ->[dashed] f[as={\itshape destabilization of stress patterns?},draw=none,text width=3.1cm] ->[dashed] {g[as={stress-conditioned V reduction, deletion},text width=3cm],h[as={syllabic Cs},yshift=3\baselineskip,align=center]} -> i[as={increased V reduction},text width=3.2cm] <- j[xshift=-4.475cm,yshift=-5\baselineskip,draw=none,as={\itshape stronger effects when morpheme/word ratio high, grammatical morphemes involved?},text width=3.2cm];
 };
 \draw[thick,-{Triangle[]}] (current bounding box.north west) ++(0,\baselineskip) -- (current bounding box.north east) node[above,at start,anchor=south west] {Simple} node[above,at end,anchor=south east] {Highly Complex};
 \end{tikzpicture}
@@ -644,7 +644,7 @@ Again, the prototypical syllable patterns of these languages are not strongly af
 \ea\label{ex:8.9}
   \etriple{Cocopa}{Cochimi-Yuman}{USA}
 
-k\textsuperscript{a}myu\'{} x\textsuperscript{i}ɬʲ\\
+k\textsuperscript{a}myúx\textsuperscript{i}ɬʲ\\
 \glt ‘I hope that somehow you will’
 \citep[47]{Crawford1966}
 \z
