@@ -1,7 +1,1 @@
-{"versions": [{"versiontype": "proofreading",
-		"title": "Highly complex syllable structure",
-		"authors": [{"name": "Shelece Easterday"}],
-	"license": "CC-BY-4.0",
-	"publishedAt": "2019-07-10T11:53:51.000Z"}
-	]
-}
+{"versions": [{"authors": [{"name": "Shelece Easterday"}], "title": "Highly complex syllable structure", "publishedAt": "2019-07-10T11:53:51.000Z", "license": "CC-BY-4.0", "versiontype": "proofreading"}, {"title": "Highly complex syllable structure", "versiontype": "first_edition", "license": "CC-BY-4.0", "publishedAt": "2019-11-11T14:30:19.347326", "authors": [{"name": "Shelece Easterday"}]}]}
